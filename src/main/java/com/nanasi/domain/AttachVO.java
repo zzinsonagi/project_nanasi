@@ -14,7 +14,7 @@ public class AttachVO {
 	//업로드 파일
 	private String att_uploadfile;
 	//파일타입
-	private char att_filetype;
+	private boolean att_filetype;
 	//첨부파일 번호
 	private int att_num;
 	//문의 번호
