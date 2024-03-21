@@ -25,5 +25,5 @@ public class QaVO {
 	private AnVO qa_answer;
 	//고장접수 첨부파일
 	private List<AttachVO> attachList;
-	
+	//
 }
