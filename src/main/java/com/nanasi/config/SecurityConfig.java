@@ -26,8 +26,8 @@ public class SecurityConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
 		
-		//.csrf((csrf) -> csrf //주석처리했으니 csrf 사용하겠다는 뜻
-		//		.disable())
+		.csrf((csrf) -> csrf //주석처리했으니 csrf 사용하겠다는 뜻
+				.disable())
 		//csrf는 웹 보안 조작된 정보로 웹사이트가 실행되도록 속이는 공격기술
 		//스프링시큐리티는 이러한 공격을 방지하기 위해 CSRF토큰을 발행하여 폼 전송시에 해당 토큰을 함께 전송해야 한다
 		.authorizeHttpRequests((auth) -> auth
@@ -37,7 +37,7 @@ public class SecurityConfig {
 		.formLogin((formLogin) -> formLogin
 				.usernameParameter("user_id")
 				.passwordParameter("user_pw")
-				.loginPage("/enterLogin") //로그인페이지 요청은 이렇게 내가 만든 페이지로 받을게
+				.loginPage("/login") //로그인페이지 요청은 이렇게 내가 만든 페이지로 받을게
 				.defaultSuccessUrl("/")) //그리고 성공시 메인으로 보낼게
 		//로그인 요청 URL과 로그인 성공시 메인으로 이동한다
 		.logout((logout) -> logout
