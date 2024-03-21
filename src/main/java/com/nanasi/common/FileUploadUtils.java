@@ -61,10 +61,11 @@ public class FileUploadUtils {//업로드하는 내용
 					file.transferTo(saveFile);
 					attVo.setAtt_uuid(uuid.toString());
 					attVo.setAtt_uploadpath(uploadPathDate);
+					attVo.setAtt_filename(uploadOriginalFileName);
 					//properties에서 업로드 경로(C:\\upload)를 해놨기 떄문에 얘는 제외하고
 					//연월일 날짜 부분만 필요
 					attVo.setAtt_uploadfile(uploadOriginalFileName);
-//					attVo.setAtt_filetype(true);
+					attVo.setAtt_filetype(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

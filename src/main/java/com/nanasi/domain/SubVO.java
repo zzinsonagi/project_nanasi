@@ -1,6 +1,7 @@
 package com.nanasi.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -25,5 +26,13 @@ public class SubVO {
 	private String sub_state;
 	//배송지
 	private String sub_address;
+	
+	
+	//첨부파일
+	private List<AttachVO> prod_attList;
+	//구독료
+	private int prod_subprice;
+	//구독 완료 날짜
+	private Date prod_endmonth;
 	
 }
