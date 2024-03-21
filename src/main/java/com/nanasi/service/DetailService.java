@@ -1,7 +1,6 @@
 package com.nanasi.service;
 
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -9,10 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.nanasi.domain.AttachVO;
 import com.nanasi.domain.ProdVO;
-import com.nanasi.domain.SubVO;
 import com.nanasi.mapper.AttachMapper;
 import com.nanasi.mapper.DetailMapper;
-import com.nanasi.mapper.SubMapper;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,7 +19,6 @@ public class DetailService {
 	
 	private final DetailMapper mapper;
 	private final AttachMapper attmap;
-	private final SubMapper submap;
 
 	
 	//상품 등록 & 첨부 - 관리자
@@ -56,5 +52,7 @@ public class DetailService {
 		//사진첨부
 		return vo;
 	}
+	
+	//상품 수정
 
 }

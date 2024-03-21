@@ -15,6 +15,9 @@ public interface AttachMapper {
 	//리뷰 이미지 등록
 	public void reviewRegister(AttachVO vo);
 	
+	//사후 질문 이미지 등록
+	public void questionRegister(AttachVO vo);
+	
 	//상품 전체 출력
 	public List<AttachVO> productIMG(String prod_no);
 	
