@@ -29,7 +29,7 @@ public class MailSenderRunner {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setFrom(from);
 		message.setTo(email);
-		message.setSubject("증명사진 구다사이");
+		message.setSubject("인증번호 입니다");
 		String content = "홈페이지 방문에 감사드립니다. 인증번호는 "+checkNum+"입니다. 인증번호를 인증번호 확인란에 기입해주세요.";
 		message.setText(content);
 		message.setSentDate(new Date());

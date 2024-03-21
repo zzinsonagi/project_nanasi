@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nanasi.mapper.SubMapper">
+	
+	<!-- 구독료 -->
+	<select id="subPriceCalc" resultType="int">
+	    select 
+	        case 
+	            when s.sub_date = 3 then floor((p.prod_price/60)*s.sub_date)
+	            when s.sub_date = 6 then floor((p.prod_price/60)*0.9*s.sub_date)
+	            when s.sub_date = 9 then floor((p.prod_price/60)*0.8*s.sub_date)
+	            else floor((p.prod_price/60)*0.7*s.sub_date)
+	        end as prod_subprice
+	    from tbl_sub s
+	    join tbl_prod p on s.prod_no = p.prod_no
+	    where s.prod_no=#{prod_no}
+	</select>
+	
+	<!-- 구독 완료일 -->
+	<select id="subEndDateCalc" resultType="date">
+		select
+			((select sub_add from tbl_sub where sub_num=#{sub_num})+(10*sub_date)) as prod_endmonth
+		from tbl_sub s
+		full outer join tbl_prod p on s.prod_no = p.prod_no
+		where s.prod_no=#{prod_no}
+	</select>
+</mapper>

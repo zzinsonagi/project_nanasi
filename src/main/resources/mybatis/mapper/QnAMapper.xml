@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nanasi.mapper.QnAMapper">
+	
+	<!-- 사전 문의 type : 0 -->
+	<!-- 유저랑 상품명 출력 -->
+	<select id="productName" resultType="com.nanasi.domain.ProdVO">
+		select prod_no, prod_name from tbl_prod where prod_no=#{prod_no}
+	</select>
+	
+	<!-- 질문 등록 -->
+	<insert id="beforeQuestionRegister">
+		<selectKey keyProperty="qa_num" order="BEFORE" resultType="Integer">
+			select tbl_qa_seq.nextval from dual
+		</selectKey>
+		insert into tbl_qa
+			(qa_num, user_id, qa_type, qa_content, prod_no)
+		values
+			(#{qa_num}, #{user_id}, 0, #{qa_content}, #{prod_no})
+	</insert>
+	
+	
+	<!-- 고장낸 후 문의 type : 1 -->
+	<!-- 질문 등록 -->
+	<insert id="afterQuestionRegister">
+		<selectKey keyProperty="qa_num" order="BEFORE" resultType="Integer">
+			select tbl_qa_seq.nextval from dual
+		</selectKey>
+		insert into tbl_qa
+			(qa_num, user_id, qa_type, qa_content, prod_no)
+		values
+			(#{qa_num}, #{user_id}, 1, #{qa_content}, #{prod_no})
+	</insert>
+	
+</mapper>
