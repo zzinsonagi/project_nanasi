@@ -10,4 +10,6 @@ public interface Member {
 	int countMemberByLoginId(String user_id);
 
 	void SignUp(UserVO vo);
+	
+	UserVO findByLoginId(String user_id);
 }

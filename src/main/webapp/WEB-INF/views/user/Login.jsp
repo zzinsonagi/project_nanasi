@@ -66,15 +66,17 @@
 		<div class="member_boxL">
 			<h2>개인회원</h2>
 			<div class="login_form">
-				<form id="frmLogin" name="login">
-<%--  				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }"/>
- --%> 					<div class="fl_clear">
-						<label for="mbrId">아이디</label> <input name="user_id" id="user_id" type="text">
+				<form id="login" name="login" method="post">
+ 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }"/>
+  					<div class="fl_clear">
+						<label for="mbrId">아이디</label> <input name="username" id="username" type="text">
 					</div>
 					<div class="fl_clear">
-						<label for="scrtNo">비밀번호</label> <input name="user_pw" id="user_pw" type="password">
+						<label for="scrtNo">비밀번호</label> <input name="password" id="password" type="password">
 					</div>
-					<a class="btn_login btn_Blue" href="javascript:fn_login();">로그인</a>
+					<a class="btn_login btn_Blue" href="javascript:fn_login();" style="width: 100%;">
+                  		 <button type="submit" class=" btn_Blue btn_login">로그인</button>
+              		 </a>
 				</form>
 			</div>
 
@@ -82,25 +84,29 @@
 </div>
 <!-- end contents -->
 <script>
-	function fn_login(){
-		if(!login.user_id.value){
-			alert("아이디 입력");
-			login.user_id.focus();
-			return false;
-		}
-		if(!login.user_pw.value){
-			alert("패스워드 입력");
-			login.user_pw.focus();
-			return false;
-		}
-		// 자바스크립트로 form 태그 속성을 지정할 수 있다
-		var form = document.login;
-		form.method="post";
-		form.action = "/login";
-		form.submit();
-		
-		var msg = "${msg}"; // 자바 속성값을 자바 변수에 저장 할 수 있다
-	}
-</script>
+      function fn_login() {
+         if(!login.username.value) {
+            alert("아이디 입력");
+            login.username.focus();
+            return false;
+         }
+         if(!login.password.value) {
+            alert("패스워드 입력");
+            login.password.focus();
+            return false;
+         }
+         // 자바스크립트로 form 태그 속성을 지정할 수 있다
+         var form = document.login;
+         form.method="post";
+         form.action="/login";
+         form.submit();
+         
+         var msg = "${ssg}"; //자바 속성값을 자바 변수에 저장할 수 있다
+         
+         if(msg) {
+            alert(msg);
+         }
+      }
+   </script>
 </body>
 </html>

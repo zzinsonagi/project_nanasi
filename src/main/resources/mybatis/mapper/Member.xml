@@ -14,4 +14,12 @@
 	<select id="countMemberByLoginId" parameterType="string" resultType="int">
 		select count(*) from tbl_user where user_id = #{value}
 	</select>
+	<select id="findByLoginId" parameterType="string" resultType="com.nanasi.domain.UserVO">
+		select
+			<include refid="memberColumns"/>
+		from
+			tbl_user
+		where
+			user_id = #{value}
+	</select>
 </mapper>
