@@ -1,5 +1,7 @@
 package com.nanasi.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,8 +39,21 @@ public class QnAController {
 		return "redirect:/qna/befQnAList_Sample";
 	}
 	
-	//상품별 질문 모음
+	//상품별 질문 출력
+	@GetMapping("/productQuestion")
+	public String productQuestion(String prod_no, Model model) {
+		List<QaVO> list = qnasv.productQuestion(prod_no);
+		model.addAttribute("list", list);
+		return "/qna/List_Sample";
+	}
+
 	
+	//답변 등록
+	@GetMapping("/befAnswerRegister")
+	public String befAnswerRegister(String qa_num) {
+		
+		return "";//질문 페이지? 아님 관리자에서 한 번에 답변하는 곳
+	}
 
 	
 	/* 고장낸 후 문의 */
@@ -61,6 +76,6 @@ public class QnAController {
 	}
 	
 	//관리자가 볼 질문 모음
-	
+	//commit용
 	
 }

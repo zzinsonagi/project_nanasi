@@ -1,5 +1,7 @@
 package com.nanasi.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.nanasi.domain.ProdVO;
@@ -24,6 +26,11 @@ public class QnAService {
 	public void beforeQuestionRegister(QaVO vo) {
 		qnamap.beforeQuestionRegister(vo);
 	};
+	
+	//상품별 질문 출력
+	public List<QaVO> productQuestion(String prod_no) {
+		return qnamap.productQuestion(prod_no);
+	}
 
 	
 	/* 고장낸 후에 문의 type : 1 */

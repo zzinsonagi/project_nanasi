@@ -20,10 +20,11 @@ public class QaVO {
 	private String prod_no;
 	//질문 제목
 	private String qa_title;
+	//답변 상태 여부			0:미완료, 1:완료
+	private int qa_state;
 	
 	//답변 추가
 	private AnVO qa_answer;
 	//고장접수 첨부파일
 	private List<AttachVO> attachList;
-	
 }

@@ -1,5 +1,7 @@
 package com.nanasi.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.nanasi.domain.ProdVO;
@@ -15,10 +17,12 @@ public interface QnAMapper {
 	//질문 등록
 	public void beforeQuestionRegister(QaVO vo);
 	
-	//질문 수정
-	
-	//질문 삭제
+	//상품별 질문 출력
+	public List<QaVO> productQuestion(String prod_no);
 
+	
+	//답변 등록 페이지 접속
+	public QaVO befAnswerEnter();
 	
 	/* 고장낸 후에 문의 : type 1 */
 	//질문 등록
