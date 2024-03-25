@@ -17,7 +17,7 @@ public class UserController {
 	
 	//로그인 페이지
 
-	//회원등록
+	//dfdfdfdfdfdf
 
 	//중복 회원 확인
 	//0 : 중복 無,		1 : 중복 有
