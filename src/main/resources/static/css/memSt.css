@@ -1,0 +1,703 @@
+/*=============================== member Style =============================*/
+
+.back-to-main {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+/*---------------------------- terms ------------------------------*/
+
+/*전체 양식*/
+.terms {
+  width:800px;
+  margin:0 auto;
+}
+
+.termsTitle {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.terms h4 {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.terms .line {
+  margin: 20px auto;
+  width:100px;
+}
+
+.terms p{
+  font-size: 12px;
+  margin:0;
+  color:#666;
+}
+
+/*전체동의버튼*/
+
+.allAgreeBtn {
+  display:flex;
+  align-items: center;
+
+  border:1px solid #ccc;
+  border-radius: 4px;
+  padding:8px;
+  padding-left:16px;
+
+  margin-bottom:40px;
+}
+
+.allAgreeBtn label{
+  margin:0;
+  flex:1;
+}
+
+.allAgreeBtn input {
+  margin-right:8px;
+  width:16px;
+  height:16px;
+}
+
+/*그외 동의*/
+
+.memberAgree {
+  border:1px solid #ccc;
+  border-radius: 4px;
+  padding:8px;
+  padding-left:16px;
+
+  margin-bottom:20px;
+}
+
+.memberAgreeBtn {
+  display:flex;
+  align-items: center;
+}
+
+.memberAgreeBtn label {
+  margin:0;
+  flex:1;
+}
+
+.memberAgreeBtn input {
+  margin-right:8px;
+  width:16px;
+  height:16px;
+}
+
+.memberAgree .line{
+  margin: 8px auto;
+  width:100%;
+  border-color: #ccc;
+}
+
+.memberAgreeContent {
+  height: 150px;
+  overflow: auto;
+  padding: 7px;
+  margin-bottom: 0;
+}
+
+.memberAgreeContent dd {
+  font-size: 14px;
+  color:#666;
+  padding:12px;
+}
+
+.btnbox {
+  margin:40px 0;
+  text-align: center;
+}
+
+.btnbox input {
+  width:160px;
+  height:40px;
+
+  border:transparent;
+  border-radius: 4px;
+  font-weight: bolder;
+  color:#fff;
+  background: #666;
+}
+
+.btnbox input:hover {
+  width:160px;
+  height:40px;
+
+  border:transparent;
+  border-radius: 4px;
+  font-weight: bolder;
+  color:#fff;
+  background: #185FFF;
+}
+
+
+/*---------------------------- join ------------------------------*/
+
+.join .myInfoEdit{
+  width:600px;
+}
+
+/*---------------------------- login ------------------------------*/
+
+.login{
+  width:400px;
+  margin:0 auto;
+}
+
+.loginInfo .idPw {
+  margin-bottom: 32px;
+}
+
+.loginInfo .idPw .msg input{
+  width:100%;
+}
+
+.loginInfo .idPw .msg input:focus{
+  outline: none;
+}
+
+.idPwBtn {
+  margin-bottom: 20px;
+}
+
+.idPwBtn button{
+  width:100%;
+  height: 52px;
+  background: #000;
+
+  border-radius: 4px;
+  border:transparent;
+  font-weight: bolder;
+
+  color:#fff;
+}
+
+.idPwBtn button:hover{
+  width:100%;
+  height: 52px;
+  background: #185FFF;
+
+  border-radius: 4px;
+  border:transparent;
+  font-weight: bolder;
+
+  color:#fff;
+}
+
+.idPwJoinPath {
+  text-align: center;
+}
+
+.idPwJoinPath button{
+  background: transparent;
+  border: transparent;
+}
+
+.idPwJoinPath span{
+  color:#666;
+  font-size: 14px;
+}
+
+/*---------*/
+
+
+.w3-container.w3-card-4 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.w3-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#join,
+#login,
+#idFind,
+#pwFind {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.w3-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.loginbtn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.loginbtn:hover {
+  background-color: #185fff;
+}
+
+.w3-center.w3-large.w3-margin-top h3 {
+  color: #333;
+  margin: 30px 0;
+  text-align: center;
+  border: transparent;
+}
+
+.find_member {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.find_member a {
+  margin: 0 14px;
+  color: #999;
+}
+
+.find_member a:hover {
+  margin: 0 14px;
+  color: #999;
+  background: #fff;
+}
+
+.join-terms {
+  font-size: 10px;
+}
+
+.btn-wrap {
+  display: flex;
+}
+.btn-dark {
+  background-color: #000;
+  color: #fff;
+  width: 390px;
+  margin-right: 10px; /* 버튼 사이의 간격 조정 */
+}
+
+.btn-primary {
+  background-color: #185fff;
+  color: #fff;
+  width: 390px;
+  margin-left: 10px; /* 버튼 사이의 간격 조정 */
+}
+
+
+
+
+
+/* ========================== my Style ============================= */
+
+/* ---------------------------- wish -----------------------------*/
+
+.wishList {
+	display: flex;
+	padding:44px;
+}
+
+.wishProductImg {
+	margin-right: 44px;
+}
+
+.wishProductInfoBtn{
+	flex:1;
+}
+
+.wishProductInfo h4 {
+	font-size: 24px;
+	font-weight: bolder;
+	margin-bottom:20px;
+}
+
+.wishProductInfoBtn p {
+	margin:0;
+	color:#858585;
+}
+
+.wishPriceInfo {
+	margin-top:20px;
+}
+
+.wishPriceInfo span {
+  font-size: 24px;
+  font-weight: bolder;
+  color:#185FFF;
+}
+
+.wishProductBtn {
+  margin-top:40px;
+}
+
+.wishProductBtn button {
+	width:220px;
+	height:48px;
+	border-radius: 4px;
+	border:transparent;
+  margin-right:4px;
+
+	color:#fff;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+.wishOption {
+	width:220px;
+	height:48px;
+	border-radius: 4px;
+	border:transparent;
+  margin-right:4px;
+  
+  background:#000;
+	color:#fff;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+.wishSub {
+	width:220px;
+	height:48px;
+	border-radius: 4px;
+	border:transparent;
+  margin-right:4px;
+  
+  background:#185FFF;
+	color:#fff;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+
+
+/* ---------------------------- subList -----------------------------*/
+
+.btnDisable {
+  background:#CBCBCB;
+}
+
+
+/* ---------------------------- myInfo -----------------------------*/
+
+.myInfo{
+  width:700px;
+  margin:0 auto;
+}
+
+.myInfo table{
+  margin:20px 0;
+}
+
+.myInfo th {
+  padding:20px;
+  padding-left: 60px;
+}
+
+.myInfo td {
+  padding-left: 60px;
+}
+
+/* ---------------------------- myInfoEdit -----------------------------*/
+
+.myInfoEdit {
+  margin:0 auto;
+  width:600px;
+}
+
+.idPw {
+  margin-bottom:60px;
+}
+
+.memInfo {
+  margin-bottom:60px;
+}
+
+.memInfo label,
+.memEmail label {
+  margin-top:28px;
+  font-weight: bolder;
+}
+
+.jumin {
+  display: flex;
+  width:100%;
+}
+
+.jumin p {
+  flex:1;
+  text-align: center;
+  margin-top:8px;
+}
+
+.jumin input {
+  width:48%;
+}
+
+.postNum{
+  display: flex;
+  width:100%
+}
+
+.postNum input {
+  width:60%;
+  margin-right:8px;
+}
+
+.postNum button {
+  width:39%;
+  height:47px;
+
+  border-radius: 4px;
+  border:transparent;
+  color:#fff;
+  background: #aaa;
+  font-weight: bolder;
+}
+
+.postNum button:hover{
+  width:39%;
+  height:47px;
+
+  border-radius: 4px;
+  border:transparent;
+  color:#fff;
+  background: #185FFF;
+  font-weight: bolder;
+}
+
+.phone {
+  display: flex;
+  width:100%;
+}
+.phone input {
+  width:30%;
+}
+
+.phone p {
+  flex:1;
+  text-align: center;
+  margin-top:8px;
+}
+
+.memEmail {
+  margin-bottom:60px;
+}
+
+.email {
+  display: flex;
+  width:100%;
+}
+
+.email p {
+  flex:1;
+  text-align: center;
+  margin-top:8px;
+}
+
+.email input {
+  width:30%;
+}
+
+.email button {
+  width:30%;
+  height:46px;
+  margin-left:16px;
+
+  border-radius: 4px;
+  border:transparent;
+  color:#fff;
+  background: #aaa;
+  font-weight: bolder;
+}
+
+.email button:hover {
+  width:30%;
+  height:46px;
+  margin-left:16px;
+
+  border-radius: 4px;
+  border:transparent;
+  color:#fff;
+  background: #185FFF;
+  font-weight: bolder;
+}
+
+.email-ok {
+  display: flex;
+}
+
+.email-ok input {
+  flex:1;
+}
+
+.email-ok button {
+  width:30%;
+  height:46px;
+  margin-left:16px;
+
+  border-radius: 4px;
+  border:transparent;
+  color:#fff;
+  background: #aaa;
+  font-weight: bolder;
+}
+
+.email-ok button:hover {
+  width:30%;
+  height:46px;
+  margin-left:16px;
+
+  border-radius: 4px;
+  border:transparent;
+  color:#fff;
+  background: #185FFF;
+  font-weight: bolder;
+}
+
+
+/* ---------------------------- myInfoEdit -----------------------------*/
+
+.idPw .clearfix{
+  margin-top:60px;
+}
+
+
+
+/* ---------------------------- reviewWrite -----------------------------*/
+
+/*상품정보 부분*/
+
+.reviewList{
+  width:900px;
+  margin:0 auto;
+  display: flex;
+	padding:44px;
+}
+
+
+/*작성하는 부분*/
+.reviewWrite{
+	width:1280px;
+	margin: 0 auto;
+}
+
+.reviewWrite table{
+	margin:0 auto;
+}
+
+.reviewWrite th{
+	padding-bottom: 20px;
+	font-weight: border;
+}
+
+.reviewWrite td{
+	width:690px;
+	padding-bottom: 20px;
+}
+
+.reviewWriteTable input{
+	width:100%;
+	height:36px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding:0 8px;
+}
+
+.reviewWriteTable input:focus{
+	outline: none;
+}
+
+.reviewWriteTable textarea{
+	width:100%;
+	height:320px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding:8px;
+}
+
+.reviewWriteTable textarea:focus{
+	outline: none;
+}
+
+.btn_wrap{
+	text-align: center;
+	margin-top:20px;
+}
+
+.btn_wrap input{
+	width:144px;
+	height:48px;
+	border:transparent;
+	border-radius: 4px;
+	color:#fff;
+	font-weight: bolder;
+}
+
+.btn_list, .btn_reset{
+	background:#000;
+}
+.btn_ok{
+	background:#185FFF;
+}
+
+/* ---------------------------- demageRegister -----------------------------*/
+
+
+
+.qnaWrite2{
+	width:1280px;
+	margin: 0 auto;
+}
+
+.qnaWrite2 table{
+	margin:0 auto;
+}
+
+.qnaWrite2 th{
+	padding-bottom: 20px;
+	font-weight: border;
+}
+
+.qnaWrite2 td{
+	width:832px;
+	padding-bottom: 20px;
+}
+
+.qnaWriteTable input{
+	width:100%;
+	height:36px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding:0 8px;
+}
+
+.qnaWriteTable input:focus{
+	outline: none;
+}
+
+.qnaWriteTable textarea{
+	width:100%;
+	height:320px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding:8px;
+}
+
+.qnaWriteTable textarea:focus{
+	outline: none;
+}

@@ -16,7 +16,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class MailSenderRunner {
 	
-	private final JavaMailSender mailSender;
+	private final JavaMailSender mailSender = null;
 	
 	@Value("${spring.mail.username}")
 	private String from;

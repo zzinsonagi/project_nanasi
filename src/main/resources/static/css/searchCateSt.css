@@ -1,0 +1,137 @@
+/*search Style*/
+/*category Style*/
+
+
+/* -----------------------  title   -----------------------*/
+.title-container {
+	width:1280px;
+	text-align:center;
+	margin:0 auto;
+	padding:30px 0;
+	padding-bottom:80px;
+}
+
+.title {
+	text-align: center;
+}
+
+.title h2 {
+	margin:0 auto;
+	font-weight:bolder;
+	font-size:38px;
+	margin-bottom:20px;
+}
+
+.title p{
+	margin:0 auto;
+}
+
+.title span{
+	font-weight: bolder;
+	color:#185FFF;
+
+}
+
+
+
+/* -----------------------  Category   -----------------------*/
+
+/*왼쪽 부분*/
+
+.col-md-3{
+	padding-right:20px;
+}
+
+.col-md-3 a{
+	text-decoration:none;
+}
+
+.col-md-3 ul{
+	text-decoration:none;
+	padding-bottom: 24px;
+	padding-left:12px;
+	
+}
+
+.col-md-3 li{
+	padding-bottom: 12px;
+	padding-left:12px;
+	
+}
+
+.category-all{
+	font-size:28px;
+	font-weight:bold;
+	color:#000;
+}
+
+.category-all:hover{
+	font-size:28px;
+	font-weight:bold;
+	color:#185FFF;
+}
+
+.line-category{
+	margin:20px 0;
+	margin-bottom:40px;
+	width:240px;
+}
+
+.category-big {
+	font-size:20px;
+	font-weight:600;
+	color:#000;
+}
+
+.category-big:hover {
+	font-size:20px;
+	font-weight:bold;
+	color:#185FFF;
+}
+
+.category-small {
+	color:#8A8A8A;
+	padding-bottom: 8px;
+}
+
+.category-small:hover {
+	color:#185FFF;
+}
+
+
+
+/*오른쪽 부분*/
+
+.w3-input-e3 {
+	border:0;
+	flex:1;
+}
+
+.product {
+	padding:0 12px;
+	width:326px;
+	margin-bottom:80px;
+}
+
+.productImg img{
+	margin-bottom: 20px;
+}
+
+.product a{
+	font-size: 24px;
+	font-weight: 1000;
+	color:#000;
+	text-decoration: none;
+}
+
+.price {
+	font-size: 28px;
+	font-weight: 1000;
+	color:#DA1E28;
+	display: inline;
+}
+
+.product p{
+	display: inline;
+	text-align: center;
+}
