@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	
+	<!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../../../front/static/css/mainSt.css" />
+    <link rel="stylesheet" href="../../../../front/static/css/searchCateSt.css"/>
+	<link rel="stylesheet" href="../../../../front/static/css/orderSt.css"/>
+	<!--<link rel="stylesheet" href="../../../../front/static/css/memSt.css"/>
+	<link rel="stylesheet" href="../../../../front/static/css/adminSt.css"/>-->
+
+    <title>WhatSub</title>
+  </head>
+
+  <body>
+    <!-- ----------------------------------- header ----------------------------------- -->
+    <header>
+		<nav class="navbar navbar-expand-lg">
+		  <div class="header">
+			<a class="navbar-brand" href="../main/main.html">
+			  <img src="../../static/images/mainlogo.png"/>
+			</a>
+  
+			<form class="d-flex" role="search" action="/search" method="get">
+			  <div class="search">
+				<button type="submit"><i class="bi bi-search"></i></button>
+				<input class="search-input" type="search" name="search" placeholder="Search for…"/>
+			  </div>
+			</form>
+			
+			
+			<div class="navTag">
+			  <a class="join" href="../member/terms.html"><i class="bi bi-person-plus-fill"></i>Join</a>
+			  <a class="login" href="../member/login.html"><i class="bi bi-lock-fill"></i>Login</a>
+			  <a class="join" href="../my/wish.html"><i class="bi bi-cart-check-fill"></i>My Sub</a>
+			  <a class="login" href="../main/main.html"><i class="bi bi-unlock-fill"></i>Logout</a>
+			  <a class="join" href="../admin/adminReturn.html"><i class="bi bi-person-square"></i>Admin</a>
+			  <a class="login" href="../main/main.html"><i class="bi bi-unlock-fill"></i>Logout</a>
+			</div>
+		  </div>
+		</nav>
+	  </header>
+	  <p class="kara"></p>
+  
+	  <!-- ----------------------------------- header 끝 ----------------------------------- -->
+	
+	<!-- ----------------------------------- content ----------------------------------- -->
+
+	<div class="detail">
+		<div class="container" >
+			<div class="row" style="padding:0 20px;">
+
+				<!-- 이미지 창 -->
+
+				<div class="col-md-7">
+				
+					<div class="main-image">
+						<img src="../../static/images/michieda/michieda1.png" alt="Image 1">
+					</div>
+
+					<!-- 스크립트 이미지 경로도 수정해야함 -->
+					<ul class="thumbnails">
+						<li class="thumbnail" data-index="0">
+							<img src="../../static/images/michieda/michieda1.png" alt="Thumbnail 1">
+						</li>
+						<li class="thumbnail" data-index="1">
+							<img src="../../static/images/michieda/michieda2.png" alt="Thumbnail 2">
+						</li>
+						<li class="thumbnail" data-index="2">
+							<img src="../../static/images/michieda/michieda3.png" alt="Thumbnail 3">
+						</li>
+						<li class="thumbnail" data-index="3">
+							<img src="../../static/images/michieda/michieda4.png" alt="Thumbnail 4">
+						</li>
+					</ul>
+					
+				</div>
+
+
+				<!-- 상품명 옵션선택 등 -->
+
+				<div class="col-md-5">
+					
+					<div class="productNamePricePath">
+						<div class="productPath float-end">
+							<a href="../category/allCate/all.html">Home > Home Appiances > Living</a>
+						</div>
+						<div class="clearfix" style="margin-bottom:28px;"></div>
+						<div class="productPath" style="margin-bottom:16px;">
+							<a href="../category/allCate/all.html">NANIWA DANSHI > </a>
+						</div>
+						<div class="productName">
+							<h2>나니와단시 미치에다 슌스케</h2>
+						</div>
+						<div class="productPrice">
+							<p class="float-end">728,725,000원</p>
+							<div class="clearfix"></div>
+							<h2 class="float-end">월 72,500원</h2>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					
+					<div class="line">
+					
+					<div class="productColorPeriod">
+						<form name="" method="post">
+							<div class="productColor">
+								<p>컬러</p>
+								<div class="color">
+									<span>색상 선택</span>
+									<div class="color-choice">
+										<button class="midnight" id="midnight" name="color" style="background:#2E3641;"></button>
+										<button class="starlight" id="starlight" name="color" style="background:#F0E5D3;"></button>
+										<button class="spacegray" id="spacegray" name="color" style="background:#7D7E80;"></button>
+										<button class="silver" id="silver" name="color" style="background:#E3E4E6;"></button>
+									</div>
+								</div>
+							</div>
+							
+							<div class="productPeriod">
+								<p>구독 기간</p>
+								<ul class="nav nav-pills gap-2 p-2 bg-primary rounded-5" id="" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+									<li class="period" role="presentation">
+										<button class="nav-link active rounded-5" id="three" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">3개월</button>
+									</li>
+									<li class="period" role="presentation">
+										<button class="nav-link rounded-5" id="six" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">6개월</button>
+									</li>
+									<li class="period" role="presentation">
+										<button class="nav-link rounded-5" id="nine" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">9개월</button>
+									</li>
+									<li class="period" role="presentation">
+										<button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">12개월</button>
+									</li>
+								</ul>
+							</div>
+						</form>
+					</div>
+					
+					<div class="productInfo">
+						<form name="" method="get">
+							<div class="antiDeliveryDate">
+								<span>예상 배송 날짜</span>
+								<p class="anti-right">2024.03.11 (월)</p>
+							</div>
+							<div class="antiSubscriptDate">
+								<span>예상 구독 기간</span>
+								<p class="anti-right">2024.03.11(월) ~ 2024.06.11(화) / 3개월</p>
+							</div>
+							<div class="line"></div>
+							<div class="monthPrice">
+								<p>월 구독료</p>
+								<h2 class="anti-right">월 72,500원</h2>
+							</div>
+						</form>
+					</div>
+					
+					<div class="productPayButton">
+						<button type="submit" class="toList" style="background:#000;">목록에 넣기</button>
+						<button type="submit" class="toSub float-end" style="background:#185FFF;" onclick="window.location.href='../payment/payment.html'">지금 구독하기</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script>
+	
+	const thumbnails = document.querySelectorAll('.thumbnail');
+	const mainImage = document.querySelector('.main-image img');
+
+	thumbnails.forEach(thumbnail => {
+		thumbnail.addEventListener('click', () => {
+			const index = thumbnail.getAttribute('data-index');
+			const imageUrl = `../../static/images/michieda/michieda${parseInt(index) + 1}.png`;
+
+			mainImage.style.opacity = 0; // 이미지 투명도 조정
+			setTimeout(() => {
+				mainImage.src = imageUrl;
+				mainImage.style.opacity = 1; // 투명도를 1로 다시 설정하여 페이드 효과
+			}, 200); // 0.5초 뒤에 이미지 변경
+			
+
+			thumbnails.forEach(thumbnail => {
+				thumbnail.classList.remove('selected');
+			});
+			thumbnail.classList.add('selected');
+		});
+	});
+
+</script>
+
+<script>
+	const colorButtons = document.querySelectorAll(".color-choice button");
+	const colorText = document.querySelector(".color span");
+
+	colorButtons.forEach((button) => {
+		button.addEventListener("click", (event) => {
+			const selectedColor = event.target.className; // 선택된 버튼의 클래스 이름 추출
+			colorText.textContent = selectedColor; // "색상 선택" 글자 변경
+
+			switch (selectedColor) {
+			case "midnight":
+				colorText.textContent = "미드나이트";
+				break;
+			case "starlight":
+				colorText.textContent = "스타라이트";
+				break;
+			case "spacegray":
+				colorText.textContent = "스페이스그레이";
+				break;
+			case "silver":
+				colorText.textContent = "실버";
+				break;
+			default:
+				colorText.textContent = "색상 선택";
+				break;
+			}
+		});
+	});
+	
+    // 컬러 선택 버튼 클릭 시 폼 제출 방지
+	$(document).ready(function () {
+    $(".color-choice button").click(function(event) {
+        event.preventDefault();
+    });
+});
+
+</script>
+
+<!-- 상품정보, 리뷰, qna  -->
+
+<div class="productInfoReviewQna">
+	<div class="box">
+		<!-- 상품정보, 리뷰, qna 분류 버튼-->
+		<div class="productGroup">
+			<div class="topBox">
+				<input type="button" value="상품정보" data-n="1" class="topBtn topBtn1">
+				<input type="button" value="리뷰" data-n="2" class="topBtn topBtn2">
+				<input type="button" value="Q&A" data-n="3" class="topBtn topBtn3">
+			</div>
+			<div class="line" style="width:1280px; margin:0 auto;"></div>
+		</div>
+
+
+		<!-- 상품정보 content -->
+		<div class="content detailInfo">
+			<div class="contentBox1">
+				<img src="../../static/images/detailInfo.png" alt="상품정보 이미지">
+			</div>
+		</div>
+
+		<!-- 리뷰 content -->
+		<div class="content detailReview">
+			<div class="contentBox2">
+				<h4>상품리뷰 3건</h4>
+
+				<!-- 리뷰 반복 -->
+				
+				<form name="review" method="get">
+					<div class="review">
+						<div class="reviewWrite">
+							<!-- 별점 -->
+							<div class="star">
+								<span class="star-input">
+									<span class="input">
+										<input type="radio" name="star-input" value="1" id="p1">
+										<label for="p1">1</label>
+										<input type="radio" name="star-input" value="2" id="p2">
+										<label for="p2">2</label>
+										<input type="radio" name="star-input" value="3" id="p3">
+										<label for="p3">3</label>
+										<input type="radio" name="star-input" value="4" id="p4">
+										<label for="p4">4</label>
+										<input type="radio" name="star-input" value="5" id="p5">
+										<label for="p5">5</label>
+									</span>
+									<output for="star-input"><b>0</b></output>						
+								</span>
+							</div>
+
+							<div class="clear-class"></div>
+
+							<div class="writerInfo">
+								<p>도준우  |  2024-03-17  |  </p><button type="button"><p>신고</p></button>  <p>|</p> <button type="button"><p>수정</p></button>  <p>|</p>  <button type="button"><p>삭제</p></button>
+
+							</div>
+							<div class="writerInfo">
+								<p>컬러 : 스타라이트  /  구독기간 : 3개월</p>
+							</div>
+
+							<div class="clear-class"></div>
+
+							<div class="reviewContent">
+								<p>만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 </p>
+							</div>
+						</div>
+						<!--<div class="thumbnailImg">
+							<img src="../../static/images/michieda/michieda1.png" alt="썸네일 이미지">
+						</div>-->
+					</div>
+				</form>
+				<div class="line"></div>
+				<!-- 리뷰 반복 끝 -->
+
+				<div class="paging2">
+					<a href=""><i class="bi bi-chevron-double-left"></i></a>
+					<a href="" class="active">1</a>
+					<a href="">2</a>
+					<a href="">3</a>
+					<a href="">4</a>
+					<a href="">5</a>
+					<a href=""><i class="bi bi-chevron-double-right"></i></a>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 별점 스크립트 -->
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/star.js"></script>
+
+		<!-- Q&A content, adminst-->
+		<div class="content detailQna">
+			<div class="contentBox3">
+				<div class="qna">
+					<div class="qnaTitle">
+						<h4>Q&A 3건</h4>
+						<button onclick="window.location.href='../detail/detailQna.html'">Q&A 작성하기</button>
+					</div>
+					<div class="qnaWrite">
+						<div class="line"></div>
+						<div class="qnaWriteTitle">
+							<p style="width:15%;">답변상태</p>
+							<p style="width:60%;">제목</p>
+							<p style="width:10%;">작성자</p>
+							<p style="width:15%;">등록일</p>
+						</div>
+						<div class="line"></div>
+						
+						<form name="qnaList" method="get">
+							<!-- Q&A list 반복되는 부분 -->
+							<div class="qnaList">
+								<div class="qnaState"> <!-- 답변상태 -->
+									<span class="qnaListWait">미답변</span>
+								</div>
+								<div class="qnaListTitle"> <!-- 제목 -->
+									<a href="../detail/detailQnaView.html">배송일부터 구독 시작인가요?</a>
+								</div>
+								<div class="qnaListWriter"> <!-- 작성자 -->
+									<p>도준우</p>
+								</div>
+								<div class="qnaListDate"> <!-- 등록일 -->
+									<p>2024.03.18</p>
+								</div>
+							</div>
+							<div class="line"></div>
+							<!-- Q&A list 반복되는 부분 끝 -->
+							
+							<!-- 답변완료 버튼만 뽑고 삭제할 부분 -->
+												<div class="qnaList">
+													<div class="qnaState"> <!-- 답변상태 -->
+														<span class="qnaListCom">답변완료</span>
+													</div>
+													<div class="qnaListTitle"> <!-- 제목 -->
+														<a href="../detail/detailQnaView.html">주문하면 보통 언제부터 배송되나요? 구독 한달은 30일 기준인가요?</a>
+													</div>
+													<div class="qnaListWriter"> <!-- 작성자 -->
+														<p>도준우</p>
+													</div>
+													<div class="qnaListDate"> <!-- 등록일 -->
+														<p>2024.03.18</p>
+													</div>
+												</div>
+												<div class="line"></div>
+							<!-- 답변완료 버튼만 뽑고 삭제할 부분 끝 -->
+						</form>
+
+						<div class="paging2">
+							<a href=""><i class="bi bi-chevron-double-left"></i></a>
+							<a href="" class="active">1</a>
+							<a href="">2</a>
+							<a href="">3</a>
+							<a href="">4</a>
+							<a href="">5</a>
+							<a href=""><i class="bi bi-chevron-double-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+
+$(document).ready(function () {
+    var topInx = 1;
+    var prvTopInx = 1;
+
+    /* 초기설정 */
+    $(".content").hide();
+    $(".detailInfo").show();
+
+    $(".topBtn").click(function () {
+        $(".topBtn").removeClass("active");
+        $(this).addClass("active");
+
+        prvTopInx = topInx;
+        topInx = parseInt($(this).attr("data-n"));
+        contentChange();
+
+    });
+
+    function contentChange() {
+        $(".content").hide();
+        $(".detailInfo").show(); // 기본적으로 상품정보는 항상 보이도록 설정
+
+        // 클릭된 버튼에 따라 해당 내용을 보이도록 설정
+        if (topInx === 1) {
+            $(".detailInfo").show();
+        } else if (topInx === 2) {
+			$(".detailInfo").hide();
+            $(".detailReview").show();
+        } else if (topInx === 3) {
+			$(".detailInfo").hide();
+            $(".detailQna").show();
+        }
+    }
+});
+	
+</script>
+	
+	<script>
+	
+	$(document).ready(function () {
+	    $(".topBtn:first").addClass("active");
+
+	    $(".topBtn").click(function () {
+	        $(".topBtn").removeClass("active");
+	        $(this).addClass("active");
+	        console.log("Clicked topBtn with data-n: " + $(this).data("n"));
+	    });
+	});
+	
+	</script>
+
+
+
+
+    <!-- ----------------------------------- content 끝 ----------------------------------- -->
+
+    <!-- ----------------------------------- footer ----------------------------------- -->
+    <footer id="footer">
+      <div class="footer_wrap">
+        <div class="row">
+		
+          <!-- 윗줄 -->
+			<div class="footer-on">
+				<a class="footerlogo" href="main.html">
+					<img src="../../static/images/footerlogo.png" />
+				</a>
+				<p class="name">Kim JinGwon  |  Park BoYoung  |  I'm SongGun  |  Jeon JiHyeon  |  Hong HyeRim</p>
+			</div>
+			<div class="footer-line">
+				<div class="line"></div>
+			</div>
+          <!-- 아랫줄 -->
+          <div class="footer_under">
+		  
+            <div class="under_left">
+              <p>Nanashi &copy; 2024. All rights reserved.</p>
+            </div>
+            <div class="under_right">
+              <!-- 유튜브 -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                />
+              </svg>
+
+              <!-- 페이스북 -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-facebook"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                />
+              </svg>
+
+              <!-- 트위터 -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-twitter-x"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                />
+              </svg>
+
+              <!-- 인스타 -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-instagram"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ----------------------------------- footer 끝 ----------------------------------- -->
+  </body>
+</html>
