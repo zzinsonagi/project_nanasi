@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/resources/css/mainSt.css" />
     <link rel="stylesheet" href="/resources/css/searchCateSt.css" />
     <link rel="stylesheet" href="/resources/css/orderSt.css" />
-    <!-- <link rel="stylesheet" href="/resources/css/memSt.css" /> -->
-    <!-- <link rel="stylesheet" href="/resources/css/adminSt.css" /> -->
+    <link rel="stylesheet" href="/resources/css/memSt.css" />
+    <link rel="stylesheet" href="/resources/css/adminSt.css" />
 
     <title>WhatSub</title>
   </head>
@@ -52,7 +52,7 @@
           </form>
 
           <div class="navTag">
-            <a class="join" href="../member/terms.html"><i class="bi bi-person-plus-fill"></i>Join</a>
+            <a class="join" href="../member/join.html"><i class="bi bi-person-plus-fill"></i>Join</a>
             <a class="login" href="../member/login.html"><i class="bi bi-lock-fill"></i>Login</a>
             <a class="join" href="../my/wish.html"><i class="bi bi-cart-check-fill"></i>My Sub</a>
             <a class="login" href="../main/main.html"><i class="bi bi-unlock-fill"></i>Logout</a>
