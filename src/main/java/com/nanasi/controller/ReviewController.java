@@ -21,8 +21,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReviewController {
 	
-	private final DetailService dtsv;
-	private final ReviewService rvsv;
+	private final DetailService dtsv = new DetailService();
+	private final ReviewService rvsv = new ReviewService();
 
 	//리뷰 등록 페이지 접속
 	@GetMapping("/registerEnter")
