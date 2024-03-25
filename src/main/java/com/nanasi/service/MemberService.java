@@ -13,8 +13,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MemberService {
 
-	private final Member member = null;
-	private final PasswordEncoder passwordEncoder = null;
+	private final Member member;
+	private final PasswordEncoder passwordEncoder;
 	
 	public int countMemberByLoginId(@RequestParam final String user_id) {
 		return member.countMemberByLoginId(user_id);

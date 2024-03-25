@@ -23,8 +23,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class DetailController {
 	
-	private final DetailService desv = new DetailService();
-	private final FileUploadUtils fuu = new FileUploadUtils();
+	private final DetailService desv;
+	private final FileUploadUtils fuu;
 
 	//상품 등록 페이지 접속 - 관리자
 	@GetMapping("/registerEnter")

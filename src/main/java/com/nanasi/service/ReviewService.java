@@ -14,8 +14,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReviewService {
 	
-	private final AttachMapper attmap = null;
-	private final ReviewMapper rvmap = null;
+	private final AttachMapper attmap;
+	private final ReviewMapper rvmap;
 	
 	//리뷰 등록 & 첨부
 	public void reviewRegister(RevVO vo) {

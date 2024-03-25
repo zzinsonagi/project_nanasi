@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @Builder
 public class MyUserDetailService implements UserDetailsService {
 
-	private final Member memberMapper = null;
+	private final Member memberMapper;
 	
 	@Override
 	// userDetails는 회원정보를 담기 위한 인터페이스

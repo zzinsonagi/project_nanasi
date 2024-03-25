@@ -20,9 +20,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class DetailService {
 	
-	private final DetailMapper mapper = null;
-	private final AttachMapper attmap = null;
-	private final SubMapper submap = null;
+	private final DetailMapper mapper;
+	private final AttachMapper attmap;
+	private final SubMapper submap;
 
 	
 	//상품 등록 & 첨부 - 관리자

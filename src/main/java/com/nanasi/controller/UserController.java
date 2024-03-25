@@ -17,8 +17,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserController {
 	
-	private final MailSenderRunner mailsend = new MailSenderRunner();
-	private final MemberService memberService = new MemberService();
+	private final MailSenderRunner mailsend;
+	private final MemberService memberService;
 	
 	String checkIncode = "";
 	
