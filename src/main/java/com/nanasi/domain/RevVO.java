@@ -15,5 +15,7 @@ public class RevVO {
 	private String rev_content;
 	//평점
 	private int rev_sco;
+	//amugona
+	private String nanasi;
 	
 }
