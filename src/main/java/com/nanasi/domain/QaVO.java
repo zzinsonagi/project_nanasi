@@ -1,9 +1,12 @@
 package com.nanasi.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import lombok.Data;
+
+
+import java.util.List;
+
 
 @Data
 public class QaVO {
