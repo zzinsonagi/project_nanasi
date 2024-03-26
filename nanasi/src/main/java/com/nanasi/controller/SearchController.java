@@ -2,10 +2,12 @@ package com.nanasi.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nanasi.common.ProdCriteria;
 import com.nanasi.common.ProdPageDTO;
@@ -21,10 +23,16 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class SearchController {
 	
+	@Autowired
 	private final SearchService service;
 	
-	@GetMapping("/plist.do")
-	public String boadList(ProdCriteria cri, Model model) {
+	@GetMapping("/plist")
+	public String plist(ProdCriteria cri, Model model) {
+		if(cri.getKeyword() == null) {
+			cri.setKeyword("");
+		}
+		
+		
 		List<ProdVO> list = service.pGetList(cri);
 		int total = service.pGetTotalCount(cri);
 		model.addAttribute("list",list);

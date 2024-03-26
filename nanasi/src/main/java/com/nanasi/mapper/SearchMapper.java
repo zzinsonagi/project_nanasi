@@ -11,7 +11,6 @@ import com.nanasi.domain.ProdVO;
 @Mapper
 public interface SearchMapper {
 	
-	public List<ProdVO> getList();
 	public List<ProdVO> getListWithPaging(ProdCriteria cri);
 	public int getTotalCount(ProdCriteria cri);
 	
