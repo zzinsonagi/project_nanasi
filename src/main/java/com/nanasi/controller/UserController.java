@@ -1,27 +1,6 @@
 package com.nanasi.controller;
 
 import org.springframework.stereotype.Controller;
-<<<<<<< HEAD
-import com.nanasi.common.MailSenderRunner;
-import lombok.RequiredArgsConstructor;
-
-@Controller
-@RequiredArgsConstructor
-public class UserController {
-	
-	private final MailSenderRunner mailsend;
-	
-	//로그인 페이지
-
-	//회원등록
-
-	//중복 회원 확인
-	//0 : 중복 無,		1 : 중복 有
-
-	//약관 페이지 접속
-	
-	//인증 메일
-=======
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -85,6 +64,5 @@ public class UserController {
 		checkIncode = mailsend.sendMail(mail);
 		return checkIncode;
 	}
->>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
 	
 }

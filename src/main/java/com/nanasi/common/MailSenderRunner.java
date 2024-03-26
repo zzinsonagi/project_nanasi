@@ -18,19 +18,6 @@ public class MailSenderRunner {
 	
 	private final JavaMailSender mailSender;
 	
-	@Value("${spring.mail.username}")
-	private String from;
-	
-	public String sendMail(String email) {
-		Random random = new Random();
-		int checkNum = random.nextInt(888888) + 111111;
-		log.info("인증번호 : "+checkNum);
-		
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom(from);
-		message.setTo(email);
-		message.setSubject("증명사진 구다사이");
-	private final JavaMailSender mailSender = null;
 	
 	@Value("${spring.mail.username}")
 	private String from;
