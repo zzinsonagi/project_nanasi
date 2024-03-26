@@ -50,6 +50,7 @@ public class DetailService {
 	public ProdVO detailOne(String sub_num) {
 		ProdVO vo = mapper.detailOne(sub_num);
 		//사진첨부
+		
 		return vo;
 	}
 	

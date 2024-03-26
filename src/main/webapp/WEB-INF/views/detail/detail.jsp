@@ -3,6 +3,7 @@ file="../main/header.jsp"%>
 
 <!-- ----------------------------------- content ----------------------------------- -->
 
+   
 <div class="detail">
   <div class="container">
     <div class="row" style="padding: 0 20px">
@@ -10,22 +11,22 @@ file="../main/header.jsp"%>
 
       <div class="col-md-7">
         <div class="main-image">
-          <img src="../../static/images/michieda/michieda1.png" alt="Image 1" />
+          <img src="/resources/images/michieda/michieda1.png" alt="Image 1" />
         </div>
 
         <!-- 스크립트 이미지 경로도 수정해야함 -->
         <ul class="thumbnails">
           <li class="thumbnail" data-index="0">
-            <img src="../../static/images/michieda/michieda1.png" alt="Thumbnail 1" />
+            <img src="/resources/images/michieda/michieda1.png" alt="Thumbnail 1" />
           </li>
           <li class="thumbnail" data-index="1">
-            <img src="../../static/images/michieda/michieda2.png" alt="Thumbnail 2" />
+            <img src="/resources/images/michieda/michieda2.png" alt="Thumbnail 2" />
           </li>
           <li class="thumbnail" data-index="2">
-            <img src="../../static/images/michieda/michieda3.png" alt="Thumbnail 3" />
+            <img src="/resources/images/michieda/michieda3.png" alt="Thumbnail 3" />
           </li>
           <li class="thumbnail" data-index="3">
-            <img src="../../static/images/michieda/michieda4.png" alt="Thumbnail 4" />
+            <img src="/resources/images/michieda/michieda4.png" alt="Thumbnail 4" />
           </li>
         </ul>
       </div>
@@ -35,17 +36,17 @@ file="../main/header.jsp"%>
       <div class="col-md-5">
         <div class="productNamePricePath">
           <div class="productPath float-end">
-            <a href="../category/allCate/all.html">Home > Home Appiances > Living</a>
+            <a href="../category/allCate/all.html">Home > Home Appliances > Living</a>
           </div>
           <div class="clearfix" style="margin-bottom: 28px"></div>
           <div class="productPath" style="margin-bottom: 16px">
-            <a href="../category/allCate/all.html">NANIWA DANSHI > </a>
+            <a href="../category/allCate/all.html">${prodVo.prod_cate} > </a>
           </div>
           <div class="productName">
-            <h2>나니와단시 미치에다 슌스케</h2>
+            <h2>${prodVo.prod_name}</h2>
           </div>
           <div class="productPrice">
-            <p class="float-end">728,725,000원</p>
+            <p class="float-end">${prodVo.prod_price}원</p>
             <div class="clearfix"></div>
             <h2 class="float-end">월 72,500원</h2>
             <div class="clearfix"></div>
@@ -167,66 +168,6 @@ file="../main/header.jsp"%>
     </div>
   </div>
 
-  <script>
-    const thumbnails = document.querySelectorAll(".thumbnail");
-    const mainImage = document.querySelector(".main-image img");
-
-    thumbnails.forEach((thumbnail) => {
-      thumbnail.addEventListener("click", () => {
-        const index = thumbnail.getAttribute("data-index");
-        const imageUrl = `../../static/images/michieda/michieda${parseInt(index) + 1}.png`;
-
-        mainImage.style.opacity = 0; // 이미지 투명도 조정
-        setTimeout(() => {
-          mainImage.src = imageUrl;
-          mainImage.style.opacity = 1; // 투명도를 1로 다시 설정하여 페이드 효과
-        }, 200); // 0.5초 뒤에 이미지 변경
-
-        thumbnails.forEach((thumbnail) => {
-          thumbnail.classList.remove("selected");
-        });
-        thumbnail.classList.add("selected");
-      });
-    });
-  </script>
-
-  <script>
-    const colorButtons = document.querySelectorAll(".color-choice button");
-    const colorText = document.querySelector(".color span");
-
-    colorButtons.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        const selectedColor = event.target.className; // 선택된 버튼의 클래스 이름 추출
-        colorText.textContent = selectedColor; // "색상 선택" 글자 변경
-
-        switch (selectedColor) {
-          case "midnight":
-            colorText.textContent = "미드나이트";
-            break;
-          case "starlight":
-            colorText.textContent = "스타라이트";
-            break;
-          case "spacegray":
-            colorText.textContent = "스페이스그레이";
-            break;
-          case "silver":
-            colorText.textContent = "실버";
-            break;
-          default:
-            colorText.textContent = "색상 선택";
-            break;
-        }
-      });
-    });
-
-    // 컬러 선택 버튼 클릭 시 폼 제출 방지
-    $(document).ready(function () {
-      $(".color-choice button").click(function (event) {
-        event.preventDefault();
-      });
-    });
-  </script>
-
   <!-- 상품정보, 리뷰, qna  -->
 
   <div class="productInfoReviewQna">
@@ -244,10 +185,12 @@ file="../main/header.jsp"%>
       <!-- 상품정보 content -->
       <div class="content detailInfo">
         <div class="contentBox1">
-          <img src="../../static/images/detailInfo.png" alt="상품정보 이미지" />
+          <img src="/resources/images/detailInfo.png" alt="상품정보 이미지" />
         </div>
       </div>
 
+
+    
       <!-- 리뷰 content -->
       <div class="content detailReview">
         <div class="contentBox2">
@@ -322,9 +265,9 @@ file="../main/header.jsp"%>
         </div>
       </div>
 
-      <!-- 별점 스크립트 -->
-      <script src="js/jquery-1.11.3.min.js"></script>
-      <script src="js/star.js"></script>
+    <!-- 별점 스크립트 -->
+    <script src="/resources/js/jquery-1.11.3.min.js"></script>
+    <script src="/resources/js/star.js"></script>
 
       <!-- Q&A content, adminst-->
       <div class="content detailQna">
@@ -392,6 +335,7 @@ file="../main/header.jsp"%>
                 <!-- 답변완료 버튼만 뽑고 삭제할 부분 끝 -->
               </form>
 
+				<!-- 진권 페이징 시작 -->
               <div class="paging2">
                 <a href=""><i class="bi bi-chevron-double-left"></i></a>
                 <a href="" class="active">1</a>
@@ -401,6 +345,8 @@ file="../main/header.jsp"%>
                 <a href="">5</a>
                 <a href=""><i class="bi bi-chevron-double-right"></i></a>
               </div>
+				<!-- 진권 페이징 끝 -->
+              
             </div>
           </div>
         </div>
@@ -417,14 +363,14 @@ file="../main/header.jsp"%>
       $(".content").hide();
       $(".detailInfo").show();
 
-      $(".topBtn").click(function () {
-        $(".topBtn").removeClass("active");
-        $(this).addClass("active");
+       $(".topBtn").click(function () {
+       $(".topBtn").removeClass("active");
+       $(this).addClass("active");
 
         prvTopInx = topInx;
         topInx = parseInt($(this).attr("data-n"));
         contentChange();
-      });
+      }); 
 
       function contentChange() {
         $(".content").hide();

@@ -40,8 +40,8 @@
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="header">
-          <a class="navbar-brand" href="../main/main.html">
-            <img src="../../static/images/mainlogo.png" />
+          <a class="navbar-brand" href="/main">
+            <img src="/resources/images/mainlogo.png" />
           </a>
 
           <form class="d-flex" role="search" action="/search" method="get">

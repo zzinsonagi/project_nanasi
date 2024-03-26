@@ -25,6 +25,17 @@ public class DetailController {
 	
 	private final DetailService desv;
 	private final FileUploadUtils fuu;
+	
+	//상품 디테일 페이지 접속
+	@GetMapping("/detail")
+	public String detailEnter(String prod_no, Model model) {
+		//상품 내용
+		ProdVO prodVo = desv.detailOne(prod_no);
+		model.addAttribute("prodVo", prodVo);
+		//리뷰 내용
+		//QnA 내용
+		return "/detail/detail";
+	}
 
 	//상품 등록 페이지 접속 - 관리자
 	@GetMapping("/registerEnter")
