@@ -17,7 +17,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     
 	
-<title>결제창확인</title>
+<title>결제창확인22222222</title>
 
 <script>
 		
