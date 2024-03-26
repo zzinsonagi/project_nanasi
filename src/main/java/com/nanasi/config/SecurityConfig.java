@@ -26,6 +26,7 @@ public class SecurityConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
 		
+<<<<<<< HEAD
 		//.csrf((csrf) -> csrf //주석처리했으니 csrf 사용하겠다는 뜻
 		//		.disable())
 		//csrf는 웹 보안 조작된 정보로 웹사이트가 실행되도록 속이는 공격기술
@@ -47,6 +48,34 @@ public class SecurityConfig {
 		//로그아웃 사용자 URI주소와 로그아웃 성공시 메인으로 이동하고 모든 세션을 제거한다
 		;
 		return http.build();
+=======
+				/*
+				 * .csrf((csrf) -> csrf //주석처리했으니 csrf 사용하겠다는 뜻 .disable())
+				 */
+		//csrf는 웹 보안 조작된 정보로 웹사이트가 실행되도록 속이는 공격기술
+		//스프링시큐리티는 이러한 공격을 방지하기 위해 CSRF토큰을 발행하여 폼 전송시에 해당 토큰을 함께 전송해야 한다
+		.authorizeHttpRequests((auth) -> auth
+				.requestMatchers("/**") //루트 밑의 모든 폴더나 파일들
+				.permitAll())
+		//인증되지 않은 모든 페이지의 요청을 허락한다
+		.formLogin((formLogin) -> formLogin
+				.usernameParameter("username")
+				.passwordParameter("password")
+				.loginPage("/login") //로그인페이지 요청은 이렇게 내가 만든 페이지로 받을게
+				.defaultSuccessUrl("/")) //그리고 성공시 메인으로 보낼게
+		//로그인 요청 URL과 로그인 성공시 메인으로 이동한다
+		.logout((logout) -> logout
+				.logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
+				.logoutSuccessUrl("/")
+				.invalidateHttpSession(true))
+		//로그아웃 사용자 URI주소와 로그아웃 성공시 메인으로 이동하고 모든 세션을 제거한다
+		;
+		http.exceptionHandling(authenticationManager -> authenticationManager
+                .authenticationEntryPoint(new CustomAuthenticationEntryPoint()));
+      
+      return http.build();
+          
+>>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
 	}
 	
 	@Bean //리턴된 HttpFirewall을 스프링에서 관리할 수 있도록 객체로 등록하세요. 즉 Bean은 객체

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/resources/css/mainSt.css" />
     <link rel="stylesheet" href="/resources/css/searchCateSt.css" />
     <link rel="stylesheet" href="/resources/css/orderSt.css" />
+<<<<<<< HEAD
     <!-- <link rel="stylesheet" href="/resources/css/memSt.css" /> -->
     <!-- <link rel="stylesheet" href="/resources/css/adminSt.css" /> -->
 
@@ -53,6 +54,32 @@
 
           <div class="navTag">
             <a class="join" href="../member/terms.html"><i class="bi bi-person-plus-fill"></i>Join</a>
+=======
+    <link rel="stylesheet" href="/resources/css/memSt.css" />
+    <link rel="stylesheet" href="/resources/css/adminSt.css" />
+
+    <title>WhatSub</title>
+  </head>
+
+  <body>
+    <!-- ----------------------------------- header ----------------------------------- -->
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="header">
+          <a class="navbar-brand" href="../main/main.html">
+            <img src="../../static/images/mainlogo.png" />
+          </a>
+
+          <form class="d-flex" role="search" action="/search" method="get">
+            <div class="search">
+              <button type="submit"><i class="bi bi-search"></i></button>
+              <input class="search-input" type="search" name="search" placeholder="Search for…" />
+            </div>
+          </form>
+
+          <div class="navTag">
+            <a class="join" href="../member/join.html"><i class="bi bi-person-plus-fill"></i>Join</a>
+>>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
             <a class="login" href="../member/login.html"><i class="bi bi-lock-fill"></i>Login</a>
             <a class="join" href="../my/wish.html"><i class="bi bi-cart-check-fill"></i>My Sub</a>
             <a class="login" href="../main/main.html"><i class="bi bi-unlock-fill"></i>Logout</a>
