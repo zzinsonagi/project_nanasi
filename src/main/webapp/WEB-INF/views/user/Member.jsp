@@ -6,8 +6,16 @@
 <meta charset="UTF-8">
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <title>Insert title here</title>
+<%--  <c:set var="check" value="${check}"/>
+   <c:if test="${check == null}">
+      <script>
+         alert("잘못된 접근 입니다");
+         location.href="/memberTerms";
+      </script>
+   </c:if> --%>
 </head>
 <body>
+
 <div class="container">
       <div class="con_title">
             <h1>내정보(개인회원)</h1>
@@ -102,6 +110,7 @@
    <!-- end contents -->
    
    <script>
+   
    	
    	function fn_save(){
    		if(!member.user_id.value){ // member.name.value == ""

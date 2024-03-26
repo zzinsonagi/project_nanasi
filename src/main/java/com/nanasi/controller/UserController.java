@@ -13,9 +13,11 @@ import com.nanasi.domain.UserVO;
 import com.nanasi.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
 @Controller
 @RequiredArgsConstructor
+@Log4j2
 public class UserController {
 	
 	private final MailSenderRunner mailsend;
@@ -56,6 +58,12 @@ public class UserController {
 	}
 
 	//약관 페이지 접속
+	@GetMapping("/memberTerms")
+	public String memberTerms(Model model) {
+		char ran = (char)((Math.random()*26)+65);
+		model.addAttribute("alpa", ran);
+		return "/user/MemberTerms";
+	}
 	
 	//인증 메일
 	@GetMapping("/mail.do")
@@ -64,5 +72,27 @@ public class UserController {
 		checkIncode = mailsend.sendMail(mail);
 		return checkIncode;
 	}
+	
+	@PostMapping("/signup")
+	public String member2(String incodeCheck, Model model) {
+		log.info(incodeCheck);
+		if(checkIncode.equals(incodeCheck)) {
+			model.addAttribute("check", "checkok");
+			checkIncode = "";
+			return "redirect:/";
+		}else {
+			checkIncode = "";
+			log.info(incodeCheck);
+			return "/user/Member";
+		}
+	}
+	
+	@GetMapping("/memberChk")
+	public String memberCheck(String user_id, Model model) {
+		UserVO vo = memberService.check(user_id);
+		model.addAttribute("board",vo);
+		return "/user/Member_check";
+	}
+	
 	
 }

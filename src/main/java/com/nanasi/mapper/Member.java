@@ -12,4 +12,6 @@ public interface Member {
 	void SignUp(UserVO vo);
 	
 	UserVO findByLoginId(String user_id);
+	
+	UserVO read(String user_id);
 }

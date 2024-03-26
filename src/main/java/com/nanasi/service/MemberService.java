@@ -29,4 +29,9 @@ public class MemberService {
 		member.SignUp(vo);
 		return vo;
 	}
+	
+	public UserVO check(String user_id) {
+		UserVO vo = member.read(user_id);
+		return vo;
+	}
 }
