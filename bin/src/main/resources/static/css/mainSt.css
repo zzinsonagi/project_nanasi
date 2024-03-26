@@ -1,0 +1,341 @@
+/*main Style*/
+
+@charset "utf-8";
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/*부트스트랩 기본 스타일 없애기*/
+.container-fluid {
+	padding:0;
+}
+
+
+/* -------------------------------------------- #header# ---------------------------------------- */
+
+header {
+	
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
+	
+	width: 1280px;
+	height: 120px;
+	padding: 20px 0 32px 0;
+	background:#fff;
+}
+
+.header {
+  display:flex;
+  width:100%;
+}
+
+.header a{
+	width:180px;
+	margin-right:40px;
+}
+
+.header form{
+	margin-right:40px;
+  flex:1; /*해당 아이템이 사용 가능한 공간을 최대한 확장하여 차지하도록*/
+}
+
+
+/*헤더에 컨텐츠가 가려지지 않도록 하는 여백*/
+.kara {
+  margin-top: 168px; 
+}
+
+/* nav 영역 */
+.navbar {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  align-items: center; /* 아이템을 수직 중앙 */
+}
+
+/* 검색 영역 */
+.d-flex {
+  align-items: center;
+  flex:1; /*해당 아이템이 사용 가능한 공간을 최대한 확장하여 차지하도록*/
+}
+
+/* 검색창 */
+.d-flex .search {
+  width: 100%;
+  height: 40px;
+  border:0;/*선 기본스타일 없애기*/
+  background:#F2F4F8;
+  border-radius: 24px;
+  padding: 10px;
+  
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+	margin-left:4px;
+	border:0;
+	background:transparent;
+	flex:1;
+}
+
+.search button {
+	border:0;
+	background:transparent;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+/* 회원가입/로그인 영역 */
+
+.navTag {
+  display: inline-block;
+  align-items: center;
+  margin:auto 0;
+}
+
+.navTag a {
+  text-decoration: none;
+  color: #001D6C;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navTag i {
+  margin-right:8px;
+  font-weight: bolder;
+}
+
+/*별점*/
+.star {
+	text-align: left;
+}
+
+.star-input>.input,
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{display: inline-block;vertical-align:middle;background:url('../../static/images/grade_img.png')no-repeat;}
+.star-input{display:inline-block; white-space:nowrap;width:225px;height:40px;line-height:30px;}
+.star-input>.input{display:inline-block;width:150px;background-size:150px;height:28px;white-space:nowrap;overflow:hidden;position: relative;}
+.star-input>.input>input{position:absolute;width:1px;height:1px;opacity:0;}
+star-input>.input.focus{outline:1px dotted #ddd;}
+.star-input>.input>label{width:30px;height:0;padding:28px 0 0 0;overflow: hidden;float:left;cursor: pointer;position: absolute;top: 0;left: 0;}
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{background-size: 150px;background-position: 0 bottom;}
+.star-input>.input>label:hover~label{background-image: none;}
+.star-input>.input>label[for="p1"]{width:30px;z-index:5;}
+.star-input>.input>label[for="p2"]{width:60px;z-index:4;}
+.star-input>.input>label[for="p3"]{width:90px;z-index:3;}
+.star-input>.input>label[for="p4"]{width:120px;z-index:2;}
+.star-input>.input>label[for="p5"]{width:150px;z-index:1;}
+.star-input>output{display:inline-block;width:32px; font-size:18px;text-align:right; vertical-align:middle;}
+
+
+
+
+/* ------------------------------------ #main visual# ----------------------------------------- */
+
+
+
+.main-wrap {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.brand-img {
+  border: 1px solid purple;
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.story {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 50px 0;
+  background-color: rgba(200, 202, 203, 0.3);
+}
+
+.story .story-wrap {
+  width: 1280px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.story .story-wrap p {
+  margin: auto;
+}
+
+.story .story-wrap .article-wrap {
+  width: 1280px;
+  display: flex;
+  justify-content: space-between;
+}
+.story .story-wrap .article-wrap .article-box {
+  padding: 20px 15px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.story .story-wrap .article-wrap .article-box span,
+.story .story-wrap .article-wrap .article-box > i,
+.story .story-wrap .article-wrap .article-box p {
+  display: block;
+}
+
+.story .story-wrap .article-wrap .article-box span {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.story .story-wrap .article-wrap .article-box > i {
+  margin-top: 20px;
+  font-size: 45px;
+  position: relative;
+}
+
+
+/* ------------------------------------ #공통 스타일# ----------------------------------------- */
+
+/*페이지 제목*/
+.title-container {
+  width: 1280px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px 0;
+  padding-bottom: 80px;
+}
+.title {
+  text-align: center;
+}
+.title h2 {
+  margin: 0 auto;
+  font-weight: bolder;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+.title p {
+  margin: 0 auto;
+}
+
+
+/*썸네일 이미지*/
+.thumbnailImg img {
+	object-fit: cover;
+	width: 212px;
+	height: 212px;
+	display: center;
+}
+
+.productImg img {
+  object-fit: cover;
+	width: 302px;
+	height: 404px;
+	display: center;
+}
+
+/*필수입력표시*/
+.notNull {
+  color:#185FFF;
+  font-weight: bolder;
+}
+
+/*페이징*/
+
+.paging{
+  text-align: center;
+}
+
+.paging a{
+  text-decoration: none;
+  padding: 16px 20px;
+  color:#000;
+  border-radius: 50%;
+}
+
+.paging .active{
+  background: #185FFF;
+  color:#fff;
+  font-weight: bolder;
+}
+
+.paging2{
+  text-align: center;
+  margin-top:60px;
+}
+
+.paging2 a{
+  text-decoration: none;
+  padding: 16px 20px;
+  color:#000;
+  border-radius: 50%;
+}
+
+.paging2 .active{
+  background: #185FFF;
+  color:#fff;
+  font-weight: bolder;
+}
+
+
+/* ---------------------------------------- #footer# ------------------------------------------*/
+
+footer {
+	
+	width: 1280px;
+	margin: 0 auto;
+	
+	padding:80px 0;
+	
+	color:#484848;
+}
+
+.footer-on {
+	display: flex; /* Flexbox를 사용하여 가로 정렬합니다 */
+	align-items: center; /* 요소들을 세로 중앙 정렬합니다 */
+}
+
+.footerlogo {
+	margin-right: 20px; /* 필요에 따라 로고와 텍스트 사이의 간격을 조정합니다 */
+}
+
+.name {
+	margin: 0; /* 기본 마진을 제거하여 레이아웃을 깔끔하게 만듭니다 */
+	margin-left: auto;
+}
+
+.footer-line {
+	margin:30px 0;
+}
+
+.line {
+  border-top: 1px solid #484848;
+  width: 100%; /* 부모 요소인 .footer_wrap에 딱 맞게 width를 100%로 설정합니다. */
+  position: relative; /* 상대 위치 설정 */
+  top: 0; /* 기본 위치로 설정합니다. */
+}
+
+.footer_under {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.under_right {
+  margin-left: auto;
+  text-align: right;
+}

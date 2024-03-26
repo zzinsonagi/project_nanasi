@@ -1,0 +1,389 @@
+/* amind Style */
+
+@charset "utf-8";
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* -----------------------  왼쪽 내비바   -----------------------*/
+
+.col-md-2{
+	padding-right:20px;
+}
+
+.col-md-2 a{
+	text-decoration:none;
+}
+
+.col-md-2 ul{
+	text-decoration:none;
+	padding-bottom: 24px;
+	padding-left:12px;
+}
+
+.col-md-2 li{
+	padding-bottom: 12px;
+	padding-left:12px;
+	
+}
+
+.category-all{
+	font-size:28px;
+	font-weight:bold;
+	color:#000;
+}
+
+.category-all:hover{
+	font-size:28px;
+	font-weight:bold;
+	color:#185FFF;
+}
+
+.line-category{
+	margin-bottom:40px;
+	width:100%;
+}
+
+.category-big {
+	font-size:20px;
+	font-weight:600;
+	color:#000;
+}
+
+.category-small {
+	color:#8A8A8A;
+	padding-bottom: 8px;
+}
+
+.category-small:hover {
+	color:#185FFF;
+}
+
+
+
+/* -----------------------  adminReturn   -----------------------*/
+
+.returnList {
+	display: flex;
+	padding:44px;
+}
+
+.returnProductImg {
+	margin-right: 44px;
+}
+
+.returnProductInfoBtn{
+	flex:1;
+}
+
+.returnProductInfo h4 {
+	font-size: 24px;
+	font-weight: bolder;
+	margin-bottom:20px;
+}
+
+.returnProductInfoBtn p {
+	margin:0;
+	color:#858585;
+}
+
+.returnOwnerInfo {
+	margin-top:20px;
+}
+
+.returnProductBtn button {
+	width:220px;
+	height:48px;
+	border-radius: 4px;
+	border:transparent;
+
+	background: #185FFF;
+	color:#fff;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+
+
+/* -----------------------  adminQnaList   -----------------------*/
+
+.qnaTitle {
+	display: flex;
+	align-items: center;
+}
+
+.qnaTitle h4 {
+	font-weight: bolder;
+	font-size: 24px;
+	text-align: left;
+	flex:1;
+	margin:0;
+}
+
+.qnaTitle button {
+	width:180px;
+	height:40px;
+
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* qna list */
+
+.qnaWrite {
+	margin-top: 28px;
+	text-align: center;
+}
+
+.qnaWriteTitle {
+	display:flex;
+	align-items: center;
+	
+	width:100%;
+	height:60px;
+}
+
+.qnaWriteTitle p {
+	margin:0;
+	font-weight:bolder;
+}
+
+.qnaList {
+	display:flex;
+	align-items: center;
+	
+	width:100%;
+	height:60px;
+}
+
+/* qna list 반복부분*/
+
+.qnaState{
+	width:15%;
+}
+
+.qnaListWait{
+	background:#ADADAD;
+	color:#fff;
+	font-weight:bolder;
+	padding:8px 28px;
+}
+
+.qnaListCom{
+	background:#185FFF;
+	color:#fff;
+	font-weight:bolder;
+	padding:8px 20px;
+}
+
+.qnaListTitle{
+	width:60%;
+	text-align:left;
+	padding-left:32px;
+}
+
+.qnaListTitle a{
+	text-decoration:none;
+	font-weight:bolder;
+	color:#000;
+}
+
+.qnaListWriter{
+	width:10%;
+}
+
+.qnaListDate{
+	width:15%;
+}
+
+.qnaListWriter p,
+.qnaListDate p {
+	margin:0;
+}
+
+
+/* -----------------------  adminQnaAns   -----------------------*/
+
+.qnaView{
+	width:1280px;
+	margin: 0 auto;
+}
+
+.qnaView table{
+	margin:0 auto;
+}
+
+.qnaView th{
+	padding-bottom: 20px;
+	font-weight: border;
+}
+
+.qnaView td{
+	width:832px;
+	padding-bottom: 20px;
+}
+
+.qnaViewTable input{
+	width:100%;
+	height:36px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding:0 8px;
+}
+
+.qnaViewTable input:focus{
+	outline: none;
+}
+
+.qnaViewTable textarea{
+	width:100%;
+	height:200px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding:8px;
+}
+
+.qnaViewTable textarea:focus{
+	outline: none;
+}
+
+.btn_wrap{
+	text-align: center;
+	margin-top:20px;
+}
+
+.btn_wrap input{
+	width:144px;
+	height:48px;
+	border:transparent;
+	border-radius: 4px;
+	color:#fff;
+	font-weight: bolder;
+}
+
+.btn_list, .btn_reset{
+	background:#000;
+}
+.btn_ok{
+	background:#185FFF;
+}
+
+
+/* -----------------------  adminReview   -----------------------*/
+
+
+.reviewList2 {
+	display: flex;
+	padding:44px;
+}
+
+.reviewProductInfo{
+	flex:1;
+}
+
+.reviewProductInfo a {
+	font-size: 24px;
+	font-weight: bolder;
+	text-decoration: none;
+	color:#000;
+}
+
+.reviewProductInfo p {
+	margin:0;
+	margin-top:20px;
+	color:#858585;
+}
+
+.reviewProductInfo button{
+	padding:0;
+	border:0;
+	background: transparent;
+	color:#858585;
+}
+
+.reviewContent {
+	margin-top:20px;
+	margin-right: 44px;
+}
+
+
+/* -----------------------  adminAdd   -----------------------*/
+
+.prodAdd {
+	width:100%;
+	padding: 40px 80px;
+}
+
+.prodAdd th{
+	padding:20px 0;
+}
+
+.btn-wrap{
+	display: flex;
+    justify-content: center;
+	margin-top:40px;
+}
+
+.btn-wrap input{
+	font-weight: bolder;
+	color:#fff;
+
+	width:144px;
+	height:48px;
+	margin: 0 8px;
+	border: transparent;
+	border-radius: 4px;
+}
+
+
+
+/* -----------------------  adminUpdateList   -----------------------*/
+
+.prodSearch input {
+	width:320px;
+	height:40px;
+	padding:8px;
+	border-radius: 4px;
+	border:1px solid #ccc;
+}
+
+.prodSearch button {
+	width:40px;
+	height:40px;
+	border-radius: 4px;
+	border:1px solid #ccc;
+}
+
+.product {
+	padding:0 12px;
+	width:326px;
+	margin-bottom:80px;
+}
+
+.productImg img{
+	margin-bottom: 20px;
+}
+
+.product a{
+	font-size: 24px;
+	font-weight: 1000;
+	color:#000;
+	text-decoration: none;
+}
+
+.price {
+	font-size: 28px;
+	font-weight: 1000;
+	color:#DA1E28;
+	display: inline;
+}
+
+.product p{
+	display: inline;
+	text-align: center;
+}
