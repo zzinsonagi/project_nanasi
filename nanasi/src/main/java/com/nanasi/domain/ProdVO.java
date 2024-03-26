@@ -25,5 +25,7 @@ public class ProdVO {
 	private Date prod_add;
 	//상품 평점 평균
 	private int prod_sco;
-
+	
+	
+	
 }
