@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nanasi.mapper.DetailMapper">
+
+	
+	<!-- 상품 등록 - 관리자 -->
+	<insert id="detailRegister">
+		<selectKey keyProperty="prod_no" order="BEFORE" resultType="string">
+			select tbl_prod_seq.nextval from dual
+		</selectKey>
+		insert into tbl_prod 
+			(prod_no, prod_name, prod_color, prod_brand, prod_price, prod_cate) 
+		values 
+			(#{prod_no}, #{prod_name}, #{prod_color}, #{prod_brand}, #{prod_price}, #{prod_cate})
+	</insert>
+	
+	<!-- 상품 전체 출력 -->
+	<select id="detailList" resultType="com.nanasi.domain.ProdVO">
+		<![CDATA[
+			select /*+ index_desc(tbl_prod tbl_prod_pk)*/ * from tbl_prod where prod_no > 0
+		]]>
+	</select>
+	
+	<!-- 상품 단일 출력 -->
+	<select id="detailOne" resultType="com.nanasi.domain.ProdVO">
+		select s.user_id, s.prod_no, p.prod_name, p.prod_color, s.sub_date,
+    		(select 
+        		case 
+	            	when s.sub_date = 3 then floor((p.prod_price/60)*s.sub_date)
+		            when s.sub_date = 6 then floor((p.prod_price/60)*0.9*s.sub_date)
+		            when s.sub_date = 9 then floor((p.prod_price/60)*0.8*s.sub_date)
+		            else floor((p.prod_price/60)*0.7*s.sub_date)
+		        end as prod_subprice
+		    from tbl_sub s
+		    join tbl_prod p on s.prod_no = p.prod_no
+		    where s.sub_num=#{sub_num}) as prod_subprice,
+	        s.sub_add,
+    	    (select sub_add from tbl_sub where sub_num=6)+(10*sub_date) as prod_endmonth,
+       		s.sub_num, s.sub_res, s.sub_state, s.sub_address, p.prod_brand, p.prod_price, p.prod_cate, p.prod_sco
+		from tbl_sub s join tbl_prod p on s.prod_no = p.prod_no where s.sub_num=#{sub_num}
+	</select>
+</mapper>

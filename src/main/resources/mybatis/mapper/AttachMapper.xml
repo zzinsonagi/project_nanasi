@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nanasi.mapper.AttachMapper">
+	
+	<!-- 상품 이미지 전체 출력 -->
+	<select id="productIMG" resultType="com.nanasi.domain.AttachVO">
+		select * from tbl_attach where prod_no = #{prod_no} order by prod_no asc
+	</select>
+	
+	<!-- 상품 이미지 등록 -->
+	<insert id="register">
+		insert into tbl_attach (att_uuid, att_uploadpath, att_filename, att_uploadfile, att_filetype, prod_no) 
+		values (#{att_uuid}, #{att_uploadpath}, #{att_filename}, #{att_uploadfile}, #{att_filetype}, #{prod_no})
+	</insert>
+	
+	<!-- 리뷰 이미지 등록 ...이거 없다며 -->
+	<insert id="reviewRegister">
+		insert into tbl_attach (att_uuid, att_uploadpath, att_filename, att_uploadfile, att_filetype, sub_num) 
+		values (#{att_uuid}, #{att_uploadpath}, #{att_filename}, #{att_uploadfile}, #{att_filetype}, #{sub_num})
+	</insert>
+	
+	<!-- 사후 질문 이미지 등록 -->
+	<insert id="questionRegister">
+		insert into tbl_attach (att_uuid, att_uploadpath, att_filename, att_uploadfile, att_filetype, qa_num) 
+		values (#{att_uuid}, #{att_uploadpath}, #{att_filename}, #{att_uploadfile}, #{att_filetype}, #{qa_num})
+	</insert>
+	
+</mapper>
