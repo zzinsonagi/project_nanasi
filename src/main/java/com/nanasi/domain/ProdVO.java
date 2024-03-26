@@ -1,7 +1,7 @@
 package com.nanasi.domain;
 
 import java.util.Date;
-<<<<<<< HEAD
+import java.util.List;
 
 import lombok.Data;
 
@@ -27,38 +27,9 @@ public class ProdVO {
 	//상품 평점 평균
 	private int prod_sco;
 	
-	
-	
-=======
-import java.util.List;
-
-import lombok.Data;
-
-@Data
-public class ProdVO {
-	
-	//상품 번호
-	private String prod_no;
-	//상품 이름
-	private String prod_name;
-	//상품 색깔
-	private String prod_color;
-	//상품 브랜드
-	private String prod_brand;
-	//원가
-	private int prod_price;
-	//상품 카테고리
-	private String prod_cate;
-	//상품 추가한 날짜
-	private Date prod_add;
-	//상품 평점 평균
-	private int prod_sco;
-	
-	
 	//사진 첨부
 	private List<AttachVO> prod_attList;
-	//구독료
-	private int prod_subprice;
+	
 	//구독 완료 날짜
 	private Date prod_endmonth;
 	//유저 아이디
@@ -72,5 +43,4 @@ public class ProdVO {
 	
 
 
->>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
 }

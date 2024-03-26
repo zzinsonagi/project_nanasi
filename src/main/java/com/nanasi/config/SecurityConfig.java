@@ -26,7 +26,6 @@ public class SecurityConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
 		
-<<<<<<< HEAD
 		.csrf((csrf) -> csrf //주석처리했으니 csrf 사용하겠다는 뜻
 				.disable())
 		//csrf는 웹 보안 조작된 정보로 웹사이트가 실행되도록 속이는 공격기술
@@ -48,7 +47,6 @@ public class SecurityConfig {
 		//로그아웃 사용자 URI주소와 로그아웃 성공시 메인으로 이동하고 모든 세션을 제거한다
 		;
 		return http.build();
-=======
 				/*
 				 * .csrf((csrf) -> csrf //주석처리했으니 csrf 사용하겠다는 뜻 .disable())
 				 */
@@ -75,7 +73,6 @@ public class SecurityConfig {
       
       return http.build();
           
->>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
 	}
 	
 	@Bean //리턴된 HttpFirewall을 스프링에서 관리할 수 있도록 객체로 등록하세요. 즉 Bean은 객체

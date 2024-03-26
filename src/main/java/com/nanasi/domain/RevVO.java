@@ -1,26 +1,11 @@
 package com.nanasi.domain;
 
 import java.util.Date;
-<<<<<<< HEAD
 
 import lombok.Data;
-
-@Data
-public class RevVO {
 	
-	//구독&예약 번호
-	private String sub_num;
-	//등록 시간
-	private Date rev_add;
-	//리뷰 내용
-	private String rev_content;
-	//평점
-	private int rev_sco;
-	
-=======
 import java.util.List;
 
-import lombok.Data;
 
 @Data
 public class RevVO {
@@ -45,5 +30,4 @@ public class RevVO {
 	private String prod_add; //구독 시작일 
 	private String sub_date; //구독 기간
 	private String prod_color;
->>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
 }

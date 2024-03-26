@@ -15,22 +15,13 @@ public class UserVO {
 	private String user_pw;
 	//주소
 	private String user_address;
-<<<<<<< HEAD
 	//전화번호
 	private String user_phone;
 	//주민번호
 	private String user_jumin;
-=======
 	private String user_address1;
 	private String user_address2;
 	private String user_address3;
-	//전화번호
-	private String user_phone;
-	//주민번호
-	private String user_jumin;
-	private String user_jumin1;
-	private String user_jumin2;
->>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
 	//사용자등급
 	private int user_grade;
 	//이메일
