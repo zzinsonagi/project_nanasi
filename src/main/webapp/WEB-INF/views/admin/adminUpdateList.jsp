@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ include
-file="../main/header.jsp"%>
+file="../main/header_BY.jsp"%>
 
 <!-- ----------------------------------- content ----------------------------------- -->
 
@@ -17,14 +17,14 @@ file="../main/header.jsp"%>
         <div class="line line-category"></div>
         <ul class="navbar-nav pcCate">
           <li><a class="category-big">회원관리</a></li>
-          <li><a class="category-small" href="../admin/adminReturn.html">회수요청</a></li>
-          <li><a class="category-small" href="../admin/adminQnaList.html">Q&A 관리</a></li>
-          <li><a class="category-small" href="../admin/adminReview.html">리뷰 관리</a></li>
+          <li><a class="category-small" href="/admin/adminReturn">해야함 회수요청</a></li>
+          <li><a class="category-small" href="/admin/adminQnaList">해야함 Q&A 관리</a></li>
+          <li><a class="category-small" href="/admin/adminReview">해야함 리뷰 관리</a></li>
         </ul>
         <ul class="navbar-nav homeCate">
           <li><a class="category-big"> 상품관리</a></li>
-          <li><a class="category-small" href="../admin/adminAdd.html">상품 등록</a></li>
-          <li><a class="category-small" href="../admin/adminUpdateList.html" style="color: #185fff">상품 수정</a></li>
+          <li><a class="category-small" href="/admin/adminAdd">상품 등록</a></li>
+          <li><a class="category-small" href="/admin/adminUpdateList" style="color: #185fff">상품 수정</a></li>
         </ul>
       </div>
 
@@ -43,13 +43,13 @@ file="../main/header.jsp"%>
               <!-- 반복되는 부분 -->
               <div class="col-md-4">
                 <div class="product">
-                  <a class="productImg" href="../admin/adminUpdate.html">
-                    <img src="../../static/images/michieda/michi.png" />
+                  <a class="productImg" href="/해야함 수정메소드">
+                    <img src="/resources/images/michieda/michi.png/해야함 첨부 연결" />
                   </a>
 
                   <div class="clearfix"></div>
 
-                  <a href="../admin/adminUpdate.html">미치에다 슌스케</a>
+                  <a href="/해야함 수정 메소드">미치에다 슌스케</a>
 
                   <div class="clearfix" style="margin-bottom: 4px"></div>
 

@@ -19,12 +19,22 @@
 			(#{qa_num}, #{user_id}, 0, #{qa_content}, #{prod_no})
 	</insert>
 	
-	<!-- 상품별 질문 출력 -->
+	<!-- 상품별 질문 출력 resultType 확인할 것 -->
 	<select id="productQuestion">
 		select qa_state, qa_title, user_id, qa_add from tbl_qa where prod_no=#{prod_no}
 	</select>
 	
-	<!-- 질문 수정 페이지 접속 -->
+	<!-- 상품별 질문 갯수 -->
+	<select id="productQuestionCount" resultType="int">
+		select count(*) from tbl_qa where prod_no=#{prod_no}
+	</select>
+	
+	<!-- 질문 디테일 resultType 확인할 것 -->
+	<select id="befQuestionDetail">
+		select * from tbl_qa where qa_num=#{qa_num}
+	</select>
+	
+	<!-- 질문 수정 페이지 접속 resultType 확인할 것 -->
 	<select id="befquestionModifyEnter">
 		select (select prod_name from tbl_prod where prod_no=#{prod_no}), qa_title, user_id, qa_content from tbl_qa
 	</select>
@@ -40,7 +50,7 @@
 	</delete>
 	
 	<!-- 사전 답변 등록 -->
-
+	
 	
 	<!-- 고장낸 후 문의 type : 1 -->
 	<!-- 질문 등록 -->
@@ -53,5 +63,29 @@
 		values
 			(#{qa_num}, #{user_id}, 1, #{qa_content}, #{prod_no})
 	</insert>
+	
+	<!-- 질문 리스트 출력 -->
+	<select id="adminQnaList" resultType="com.nanasi.domain.QaVO">
+		select * from tbl_qa where qa_type=1
+	</select>
+	
+	<!-- 질문 개별 출력 -->
+	<select id="afterQuestionOne" resultType="com.nanasi.domain.QaVO">
+		select * from tbl_qa where qa_num=#{qa_num}
+	</select>
+	
+	
+	<!-- 답변 등록 -->
+	<insert id="answerRegister">
+		insert into tbl_an (an_content, qa_num, user_id) values 
+		(#{an_content}, 
+		(select qa_num from tbl_qa where qa_num=#{qa_num}), 
+		(select user_id from tbl_qa where qa_num=#{qa_num}))
+	</insert>
+	
+	<!-- 답변 등록된 상태로 바꾸기 -->
+	<update id="stateUpdate">
+		update tbl_qa set qa_state=1 where qa_num=#{qa_num}
+	</update>
 	
 </mapper>

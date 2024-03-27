@@ -1,6 +1,7 @@
 package com.nanasi.service;
 
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -38,6 +39,7 @@ public class DetailService {
 	//상품 전체 출력
 	public List<ProdVO> detailList() {
 		List<ProdVO> list = mapper.detailList();
+		//사진 첨부
 		for(ProdVO provo : list) {
 			String prod_no = provo.getProd_no();
 			List<AttachVO> attlist = attmap.productIMG(prod_no);
@@ -46,14 +48,26 @@ public class DetailService {
 		return list;
 	}
 	
-	//상품 단일 출력 + 구독료, 구독 완료일 계산
+	//상품 단일 출력 : 구독, 날짜 계산 포함
 	public ProdVO detailOne(String sub_num) {
 		ProdVO vo = mapper.detailOne(sub_num);
-		//사진첨부
+
+		//구독 계산
+		int subPrice = mapper.payCalc(sub_num);
+		vo.setProd_subprice(subPrice);
+		
+		//날짜계산
+		Date endMonth = mapper.dateCalc(sub_num);
+		vo.setProd_endmonth(endMonth);
+		
+		//사진 첨부
+		String prod_no = vo.getProd_no();
+		List<AttachVO> attlist = attmap.productIMG(prod_no);
+		vo.setProd_attList(attlist);
 		
 		return vo;
 	}
 	
-	//상품 수정
+	//구독 계산
 
 }

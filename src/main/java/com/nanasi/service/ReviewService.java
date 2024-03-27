@@ -60,4 +60,19 @@ public class ReviewService {
 		return rvmap.reviewAll(prod_no);
 	}
 	
+	//리뷰 갯수 출력
+	public int reviewCount(String prod_no) {
+		return rvmap.reviewCount(prod_no);
+	}
+
+	//신고된 리뷰 출력
+	public List<RevVO> badReview(int rev_report){
+		return rvmap.badReview(rev_report);
+	}
+	
+	//신고된 리뷰 갯수
+	public int badReviewCount(int rev_report) {
+		return rvmap.badReviewCount(rev_report);
+	}
+		
 }

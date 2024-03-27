@@ -73,22 +73,6 @@ public class ReviewController {
 		return "redirect:/review/allPrint";
 	}
 	
-	//리뷰 신고 수락(자동 삭제)
-	@GetMapping("/notifyAccept")
-	public String reviewNotifyAccept(@RequestParam String sub_num) {
-		//삭제
-		rvsv.reviewDelete(sub_num);
-		return "redirect:/review/allPrint";
-	}
-	
-	//리뷰 신고 거절(자동 복구)
-	@GetMapping("/notifyReject")
-	public String reviewNotifyReject(@RequestParam String sub_num) {
-		//복구(rev_report를 1에서 0으로 변경)
-		rvsv.reviewNotifyReject(sub_num);
-		return "redirect:/review/allPrint";
-	}
-	
 	//상품별 리뷰 목록 출력
 	@GetMapping("/productReview")
 	public String productReview(@RequestParam String prod_no, Model model) {

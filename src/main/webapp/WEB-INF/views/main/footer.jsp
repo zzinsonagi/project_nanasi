@@ -7,7 +7,7 @@
       <!-- 윗줄 -->
       <div class="footer-on">
         <a class="footerlogo" href="main.html">
-          <img src="../../static/images/footerlogo.png" />
+          <img src="/resources/images/footerlogo.png" />
         </a>
         <p class="name">Kim JinKwon | Park BoYoung | I'm SongGun | Jeon JiHyeon | Hong HyeRim</p>
       </div>
