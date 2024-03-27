@@ -5,12 +5,13 @@
 	
 	<select id="getListWithPaging" resultType="com.nanasi.domain.ProdVO">
 		
-		select prod_no, prod_name, prod_price from (
+		select prod_no, prod_name, prod_price, round((prod_price/60)*0.7,-2)as prod_subprice from (
 		    select rownum rn, prod_no, prod_name, prod_price
 		    from (
 		        select prod_no, prod_name, prod_price
 		        from (
-		            select prod_no, prod_name, prod_price
+		            select prod_no, prod_name, prod_price,
+            		ROW_NUMBER() OVER (PARTITION BY prod_name ORDER BY prod_name) AS prod
 		            from tbl_prod
 		            where prod_name like '%'||#{keyword}||'%'
 		                or prod_color like '%'||#{keyword}||'%'
@@ -18,8 +19,8 @@
 		                or prod_cate like '%'||#{keyword}||'%'
 		            group by prod_no, prod_name, prod_price
 		            order by prod_name asc
-		            )
-		    )
+		            )WHERE prod = 1
+		    	)
 		<![CDATA[
 		    where rownum <= #{pageNum} * #{amount}
 		    
@@ -50,18 +51,20 @@
 	</select>
 	
 	<select id="getTotalCount" resultType="int">
+	
 		select count(*) as total 
 	      		from 
 	      		( 
-	      		    select prod_no as total from tbl_prod where prod_name like '%'||#{keyword}||'%' 
+	      		    select prod_name as total from tbl_prod where prod_brand like '%'||#{keyword}||'%' 
 	      		    union
-	      		    select prod_no as total from tbl_prod where prod_brand like '%'||#{keyword}||'%' 
-	      		    union
-	      		    select prod_name as total from tbl_prod where prod_color like '%'||#{keyword}||'%' 
+	      		    select prod_name from tbl_prod where prod_name like '%'||#{keyword}||'%' 
 	      		    group by prod_name 
 	      		    union
-	      		    select prod_no as total from tbl_prod where prod_cate like '%'||#{keyword}||'%' 
+	      		    select prod_name as total from tbl_prod where prod_cate like '%'||#{keyword}||'%' 
+                    union
+                    select prod_name as total from tbl_prod where prod_color like '%'||#{keyword}||'%'
 	      		)
+	    
 	</select>
 
 </mapper>

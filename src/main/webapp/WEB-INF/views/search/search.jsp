@@ -3,12 +3,16 @@ file="../main/header.jsp"%>
 
 <!-- ----------------------------------- content ----------------------------------- -->
 
-<div class="title-container">
-  <div class="title">
-    <h2>"미치에다 슌스케"</h2>
-    <p>검색결과 <span>725</span>건</p>
-  </div>
-</div>
+<c:if test="${empty pageMaker.cri.keyword}">
+	</c:if>
+<c:if test="${not empty pageMaker.cri.keyword}">
+		<div class="title-container">
+		  <div class="title">
+		    <h2>"${pageMaker.cri.keyword }"</h2>
+		    <p>검색결과 <span>${pageMaker.total }</span>건</p>
+		  </div>
+		</div>
+</c:if>
 
 <div class="category">
   <div class="container" style="padding-right: 20px">
@@ -62,32 +66,45 @@ file="../main/header.jsp"%>
 
         <div class="row">
           <!-- 상품 리스트 반복 요소 -->
+          <c:forEach var="list" items="${list}">
           <div class="col-md-4">
             <div class="product">
-              <a class="productImg" href="../detail/detail.html">
+              <a class="productImg" href="../detail/detail?prod_no=${list.prod_no}">
                 <img src="../../static/images/michieda/michi.png" />
               </a>
 
               <div class="clearfix"></div>
 
-              <a href="../detail/detail.html">미치에다 슌스케</a>
+              <a href="../detail/detail?prod_no=${list.prod_no}">${list.prod_name}</a>
 
               <div class="clearfix" style="margin-bottom: 4px"></div>
 
-              <span class="price">72,500원</span>
-              <p>월 구독료</p>
+              <span class="price"><fmt:formatNumber value="${list.prod_subprice}"></fmt:formatNumber></span>
+              <p>월 구독료 </p>
+              <%-- <fmt:formatNumber value="${list.prod_price}"></fmt:formatNumber> --%>
+              
             </div>
           </div>
+          </c:forEach>
           <!-- 상품 리스트 반복 요소 끝 -->
 
           <div class="paging">
-            <a href=""><i class="bi bi-chevron-double-left"></i></a>
+            <!-- <a href=""><i class="bi bi-chevron-double-left"></i></a>
             <a href="" class="active">1</a>
             <a href="">2</a>
             <a href="">3</a>
             <a href="">4</a>
             <a href="">5</a>
-            <a href=""><i class="bi bi-chevron-double-right"></i></a>
+            <a href=""><i class="bi bi-chevron-double-right"></i></a> -->
+            <c:if test="${pageMaker.prev }">
+				<a href="${pageMaker.startPage-1}"><i class="fa  fa-angle-double-left"></i></a>
+			</c:if>
+			<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+				<a href="/search/plist?pageNum=${num}&amount=${pageMaker.cri.amount}&keyword=${pageMaker.cri.keyword}" class="${pageMaker.cri.pageNum == num ?'active':''}">${num}</a>
+			</c:forEach>
+			<c:if test="${pageMaker.next }">
+				<a href="${pageMaker.endPage+1}"><i class="fa  fa-angle-double-right"></i></a>
+			</c:if>
           </div>
         </div>
       </div>
