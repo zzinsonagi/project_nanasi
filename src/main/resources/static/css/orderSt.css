@@ -1,0 +1,713 @@
+/*main Style*/
+
+
+/*--------------------- detail page ---------------------*/
+
+/*main-image*/
+
+.main-image img {
+	margin: 0 auto;
+	margin-bottom:32px;
+	transition: opacity 0.5s ease; /* 이미지 변경 시 0.5초 동안 페이드 효과 적용 */
+	opacity: 1; /* 초기 투명도 설정 */
+	
+	/*이미지 크기 고정*/
+	object-fit: cover;
+	width: 702px;
+	height: 628px;
+	display: center;
+}
+
+.thumbnails {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.thumbnail img {
+	width:157px;
+	height:141px;
+	cursor: pointer;
+	margin-right:24px;
+	transition: border-color 0.3s ease; /* 선택된 썸네일에 대한 효과 */
+
+	/*이미지 크기 고정*/
+	object-fit: cover;
+	display: center;
+}
+
+.thumbnail.selected img {
+	border:8px solid #ccc;
+}
+
+
+
+/*productNamePricePath*/
+
+.productPath a{
+	text-decoration:none;
+	color:#858585;
+}
+
+.productName h2{
+	font-weight:bolder;
+	font-size:28px;
+	margin-bottom:24px;
+}
+
+
+.productPrice{
+	margin-bottom:20px;
+}
+
+.productPrice .float-end{
+	margin-bottom:12px;
+}
+
+.productPrice h2{
+	font-weight:bolder;
+	font-size:28px;
+	color:#185FFF;
+}
+
+
+
+/*productColorPeriod*/
+
+
+/*컬러선택*/
+.productColorPeriod {
+	margin-top: 40px;
+}
+
+.productColor {
+	display:flex;
+	margin-bottom: 44px;
+}
+
+.productColor p{
+	margin:0;
+	width:104px;
+	font-weight:bolder;
+}
+
+.color-choice button{
+	padding:16px;
+	border-radius:50%;
+	margin-top:20px;
+	margin-right:8px;
+	border:4px solid #fff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*
+.color-choice button{
+	padding:16px;
+	border-radius:50%;
+	margin-top:20px;
+	margin-right:8px;
+	border:4px solid #185FFF;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+*/
+
+/*구독기간*/
+.bg-primary{
+	background-color: #D9D9D9 !important;
+}
+
+.productPeriod {
+	display:flex;
+	align-items: center;
+}
+
+.productPeriod p {
+	margin:0;
+	flex:1;
+	font-weight:bolder;
+}
+
+.productPeriod ul {
+	margin:0;
+	background:#D9D9D9;
+}
+
+.period button {
+	padding:8px 24px;
+	font-weight:bolder;
+}
+
+
+
+/*productInfo*/
+
+/*네모박스*/
+.productInfo {
+	margin-top:28px;
+	border:1px solid #8B8B8B;
+	padding: 28px 20px;
+	border-radius: 16px;
+}
+
+.antiDeliveryDate,
+.antiSubscriptDate {
+	display:flex;
+	align-items: center;
+	font-size: 14px;
+	margin-bottom:24px;
+}
+
+.anti-right {
+	flex:1;
+	text-align: right;
+	margin: 0 auto;
+	font-weight:bolder;
+}
+
+.monthPrice {
+	margin-top:24px;
+	display:flex;
+	align-items: center;
+}
+
+.monthPrice p{
+	margin:0 auto;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+.monthPrice h2{
+	font-weight:bolder;
+	font-size:28px;
+	color:#185FFF;
+}
+
+/*productPayButton*/
+
+.productPayButton{
+	margin-top:28px;
+}
+
+.productPayButton button{
+	width:49%;
+	height:60px;
+	border-radius: 4px;
+	border:transparent;
+	font-size: 20px;
+	font-weight: bolder;
+	color:#fff;
+}
+
+
+/*--------------------- 상품정보, 리뷰, qna ---------------------*/
+
+/*분류 버튼 부분*/
+.productInfoReviewQna {
+	margin-top:116px;
+	text-align:center;
+}
+
+.content {
+	max-width:1280px;
+	margin:0 auto;
+	margin-top:40px;
+}
+
+.topBtn {
+	width: 424px;
+	height: 60px;
+	padding:0;
+	margin-right:-4px;
+
+	font-size:20px;
+	font-weight: bolder;
+
+	background: #fff;
+	border:transparent;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.topBtn.active {
+	width: 424px;
+	height: 60px;
+	padding:0;
+
+	font-size:20px;
+	font-weight: bolder;
+	color:#fff;
+
+	background:#185FFF;
+	border:transparent;
+}
+
+
+/*상품정보*/
+
+.contentBox1 {
+	padding-top:40px;
+}
+
+/*리뷰*/
+
+.detailReview {
+	padding:44px;
+}
+
+.contentBox2 h4 {
+	font-weight: bolder;
+	font-size: 24px;
+	text-align: left;
+}
+
+.review{
+	margin-top:44px;
+	margin-bottom:28px;
+	display: flex;
+}
+
+.writerInfo{
+	text-align: left;
+	color:#858585;
+
+	display: flex;
+}
+
+.writerInfo button{
+	background: transparent;
+	border:0;
+}
+
+.writerInfo p {
+	color:#858585;
+	margin:0;
+}
+
+.reviewContent{
+	text-align: left;
+	padding-right:44px;
+}
+
+.clear-class {
+	margin-bottom: 12px;
+}
+
+/*리뷰 사진 (썸네일 사진으로 묶기)*/
+
+/*
+.reviewImg img {
+	object-fit: cover;
+	width: 212px;
+	height: 212px;
+	display: center;
+}
+*/
+
+/*Q&A*/
+
+.detailQna {
+	padding:44px;
+}
+
+.qnaTitle {
+	display: flex;
+	align-items: center;
+}
+
+.qnaTitle h4 {
+	font-weight: bolder;
+	font-size: 24px;
+	text-align: left;
+	flex:1;
+	margin:0;
+}
+
+.qnaTitle button {
+	width:180px;
+	height:40px;
+
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* qna list */
+
+.qnaWrite {
+	margin-top: 44px;
+}
+
+.qnaWriteTitle {
+	display:flex;
+	align-items: center;
+	
+	width:100%;
+	height:60px;
+}
+
+.qnaWriteTitle p {
+	margin:0;
+	font-weight:bolder;
+}
+
+.qnaList {
+	display:flex;
+	align-items: center;
+	
+	width:100%;
+	height:60px;
+}
+
+/* qna list 반복부분*/
+
+.qnaState{
+	width:15%;
+}
+
+.qnaListWait{
+	background:#ADADAD;
+	color:#fff;
+	font-weight:bolder;
+	padding:8px 28px;
+}
+
+.qnaListCom{
+	background:#185FFF;
+	color:#fff;
+	font-weight:bolder;
+	padding:8px 20px;
+}
+
+.qnaListTitle{
+	width:60%;
+	text-align:left;
+	padding-left:32px;
+}
+
+.qnaListTitle a{
+	text-decoration:none;
+	font-weight:bolder;
+	color:#000;
+}
+
+.qnaListWriter{
+	width:10%;
+}
+
+.qnaListDate{
+	width:15%;
+}
+
+.qnaListWriter p,
+.qnaListDate p {
+	margin:0;
+}
+
+
+
+/*--------------------- detailQna ---------------------*/
+
+.qnaWrite2{
+	width:1280px;
+	margin: 0 auto;
+}
+
+.qnaWrite2 table{
+	margin:0 auto;
+}
+
+.qnaWrite2 th{
+	padding-bottom: 20px;
+	font-weight: border;
+}
+
+.qnaWrite2 td{
+	width:832px;
+	padding-bottom: 20px;
+}
+
+.qnaWriteTable input{
+	width:100%;
+	height:36px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding:0 8px;
+}
+
+.qnaWriteTable input:focus{
+	outline: none;
+}
+
+.qnaWriteTable textarea{
+	width:100%;
+	height:320px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding:8px;
+}
+
+.qnaWriteTable textarea:focus{
+	outline: none;
+}
+
+.btn_wrap{
+	text-align: center;
+	margin-top:20px;
+}
+
+.btn_wrap input{
+	width:144px;
+	height:48px;
+	border:transparent;
+	border-radius: 4px;
+	color:#fff;
+	font-weight: bolder;
+}
+
+.btn_list, .btn_reset{
+	background:#000;
+}
+.btn_ok{
+	background:#185FFF;
+}
+
+
+
+
+/*--------------------- detailQnaView ---------------------*/
+
+
+.qnaView{
+	width:1280px;
+	margin: 0 auto;
+}
+
+.qnaView table{
+	margin:20px auto;
+}
+
+.qnaView th{
+	padding-bottom: 40px;
+	font-weight: border;
+}
+
+.qnaView td{
+	width:832px;
+	padding-bottom: 40px;
+}
+
+.qnaViewTable input{
+	width:100%;
+	height:36px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+}
+
+.qnaViewTable textarea{
+	width:100%;
+	height:320px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+}
+
+.btn_wrap{
+	text-align: center;
+	margin-top:20px;
+}
+
+.btn_wrap input{
+	width:144px;
+	height:48px;
+	border:transparent;
+	border-radius: 4px;
+	color:#fff;
+	font-weight: bolder;
+}
+
+.btn_wrap input:hover{
+	width:144px;
+	height:48px;
+	border:transparent;
+	border-radius: 4px;
+	background:#185FFF;
+	color:#fff;
+	font-weight: bolder;
+}
+
+.btn_list, .btn_reset{
+	background:#000;
+}
+.btn_ok{
+	background:#185FFF;
+}
+
+
+
+
+/*--------------------- payment ---------------------*/
+
+/* 주문자 정보, 배송지 */
+.payOrderDeliInfo h4 {
+	font-size: 20px;
+	font-weight: bolder;
+	padding: 16px;
+}
+
+.orderInfo table {
+	margin:40px;
+}
+
+.orderInfo td {
+	width:560px;
+}
+
+.deliInfo {
+	margin-top: 40px;
+}
+
+.deliInfo table {
+	margin:40px;
+}
+
+.deliInfo td {
+	width:560px;
+}
+
+.deliInfo input {
+	width: 100%;
+	height: 36px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0 8px;
+}
+
+.postNum {
+	display: flex;
+	width:400px;
+	margin-bottom: 12px;
+}
+
+.postNum input {
+	flex:1;
+	margin-right: 12px;
+}
+
+.postNum button {
+	border-radius: 4px;
+	border:transparent;
+	width:160px;
+	
+	background: #ADADAD;
+	color:#fff;
+}
+
+.postNum button:hover {
+	border-radius: 4px;
+	border:transparent;
+	width:160px;
+	
+	background: #185FFF;
+	color:#fff;
+}
+
+
+/* 주문상품, 결제하기버튼 */
+
+.orderProductInfoPay h4 {
+	font-size: 20px;
+	font-weight: bolder;
+	padding: 16px 16px 16px 0;
+}
+
+.orderProductImg img {
+	object-fit: cover;
+	width:396px;
+	height:272px;
+	display:center;
+}
+
+.orderProductInfo {
+	margin-top:24px;
+}
+
+.orderProductInfo h4{
+	margin:0;
+}
+
+.orderProductInfo p{
+	color:#858585;
+}
+
+.orderProductInfo span{
+	font-size: 24px;
+	font-weight: bolder;
+	color:#185FFF;
+}
+
+.orderProduct {
+	margin-top:48px;
+}
+
+.orderProduct button{
+	width:49%;
+	height:60px;
+	border-radius: 4px;
+	border:transparent;
+	font-size: 20px;
+	font-weight: bolder;
+	color:#fff;
+}
+
+
+/*--------------------- paymentCom ---------------------*/
+
+.paymentCom {
+	width:1280px;
+	text-align: center;
+	margin:0 auto;
+	padding: 160px 0;
+}
+
+.paymentComIcon i {
+	font-size: 80px;
+	font-weight: bolder;
+	color: #185FFF;
+}
+
+.paymentComText {
+	margin-top:40px;
+}
+
+.paymentComText h1 {
+	font-size: 32px;
+	font-weight:bolder;
+	margin-bottom:16px;
+}
+
+.paymentComButton {
+	margin-top:60px;
+}
+
+.paymentComButton button {
+	width:200px;
+	height:60px;
+	border:transparent;
+	border-radius: 4px;
+	background: #000;
+
+	font-size: 20px;
+	font-weight:bolder;
+	color:#fff;
+}
+
+.paymentComButton button:hover {
+	width:200px;
+	height:60px;
+	border:transparent;
+	border-radius: 4px;
+	background: #185FFF;
+
+	font-size: 20px;
+	font-weight:bolder;
+	color:#fff;
+}

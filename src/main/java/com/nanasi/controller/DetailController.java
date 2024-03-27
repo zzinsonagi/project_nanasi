@@ -54,5 +54,11 @@ public class DetailController {
 	public String qna() {
 		return "/detail/detailQna";
 	}
+	
+	//이미지 전환 test
+	@GetMapping("/testImg")
+	public String changeIMG() {
+		return "/detail/test_Sample";
+	}
 
 }

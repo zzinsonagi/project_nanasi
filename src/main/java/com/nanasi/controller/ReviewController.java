@@ -97,10 +97,7 @@ public class ReviewController {
 		return "/review/reviewList_Sample";
 	}
 	
-	@GetMapping("/star")
-	public String starTest() {
-		return "/review/test_Sample";
-	}
+
 
 
 }

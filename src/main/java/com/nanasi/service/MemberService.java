@@ -23,8 +23,12 @@ public class MemberService {
 	public UserVO signUp(UserVO vo) {
 		String jumin = vo.getUser_jumin1()+vo.getUser_jumin2();
 		String address = vo.getUser_address1()+vo.getUser_address2()+vo.getUser_address3();
+		String phone = vo.getUser_phone1()+vo.getUser_phone2()+vo.getUser_phone3();
+		String email = vo.getUser_email1()+"@"+vo.getUser_email2();
 		vo.setUser_jumin(jumin);
 		vo.setUser_address(address);
+		vo.setUser_phone(phone);
+		vo.setUser_email(email);
 		vo.setUser_pw(passwordEncoder.encode(vo.getUser_pw()));
 		member.SignUp(vo);
 		return vo;

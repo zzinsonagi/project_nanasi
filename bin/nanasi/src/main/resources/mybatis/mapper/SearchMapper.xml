@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nanasi.mapper.SearchMapper">
+	
+	<select id="getListWithPaging" resultType="com.nanasi.domain.ProdVO">
+		select prod_no, prod_name, prod_price from (
+		    select rownum rn, prod_no, prod_name, prod_price
+		    from (
+		        select prod_no, prod_name, prod_price
+		        from (
+		            select prod_no, prod_name, prod_price
+		            from tbl_prod
+		            where prod_name like '%#{keyword}%'
+		                or prod_color like '%#{keyword}%'
+		                or prod_brand like '%#{keyword}%'
+		                or prod_cate like '%#{keyword}%'
+		            group by prod_no, prod_name, prod_price
+		            order by prod_name asc
+		            )
+		    )
+		<![CDATA[
+		    where rownum <= #{pageNum} * #{amount}
+		    
+		) where rn > (#{pageNum}-1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="getTotalCount" resultType="com.nanasi.domain.ProdVO">
+		select count(*) as total 
+	      		from 
+	      		( 
+	      		    select prod_no as total from tbl_prod where prod_name like '%#{keyword}%' 
+	      		    union
+	      		    select prod_no as total from tbl_prod where prod_brand like '%#{keyword}%' 
+	      		    union
+	      		    select prod_name as total from tbl_prod where prod_color like '%#{keyword}%' 
+	      		    group by prod_name 
+	      		    union
+	      		    select prod_no as total from tbl_prod where prod_cate like '%#{keyword}%' 
+	      		)
+	</select>
+
+</mapper>
+

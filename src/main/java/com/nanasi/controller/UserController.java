@@ -4,7 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,12 +26,18 @@ public class UserController {
 	
 	String checkIncode = "";
 	
+	@GetMapping("/")
+	public String main() {
+		return "/main/main";
+	}
+	
 	//로그인 페이지
 	@GetMapping("/login")
 	public String login() {
-		return "/user/Login";
+		return "/member/login";
 	}
-
+	
+	
 	//회원등록
 	@GetMapping("/member")
 	public String member(String incodeCheck, Model model) {
@@ -40,21 +47,33 @@ public class UserController {
 			return "redirect:/";
 		}else {
 			checkIncode = "";
-			return "/user/Member";
+			return "/member/join";
 		}
 	}
 	
-	@PostMapping("/member")
-	public String signupMember(UserVO vo, Model model) {
-		memberService.signUp(vo);
-		return "redirect:/member";
-	}
+	
+	  @PostMapping("/member")
+	  public String member21(String incodeCheck, Model model) {
+			if(checkIncode.equals(incodeCheck)) {
+				model.addAttribute("check", "checkok");
+				checkIncode = "";
+				return "redirect:/";
+			}else {
+				checkIncode = "";
+				return "/member/join";
+			}
+		}
+	 
 	//중복 회원 확인
 	//0 : 중복 無,		1 : 중복 有
-	@GetMapping("/member-count")
+	@PostMapping("/member-count")
 	@ResponseBody
 	public int countMemberByLoginId(@RequestParam String user_id) {
-		return memberService.countMemberByLoginId(user_id);
+		if(user_id == null) {
+			return 0;
+		}else {
+			return 1;
+		}
 	}
 
 	//약관 페이지 접속
@@ -62,7 +81,7 @@ public class UserController {
 	public String memberTerms(Model model) {
 		char ran = (char)((Math.random()*26)+65);
 		model.addAttribute("alpa", ran);
-		return "/user/MemberTerms";
+		return "/member/terms";
 	}
 	
 	//인증 메일
@@ -83,16 +102,15 @@ public class UserController {
 		}else {
 			checkIncode = "";
 			log.info(incodeCheck);
-			return "/user/Member";
+			return "/member/join";
 		}
 	}
 	
-	@GetMapping("/memberChk")
-	public String memberCheck(String user_id, Model model) {
+	@GetMapping("/myinfo")
+	public String myinfo(String user_id, Model model) {
 		UserVO vo = memberService.check(user_id);
 		model.addAttribute("board",vo);
-		return "/user/Member_check";
+		return "/my/myInfo";
 	}
-	
 	
 }

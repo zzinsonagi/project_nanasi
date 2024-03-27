@@ -14,16 +14,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SearchService {
 	
+	
 	private final SearchMapper mapper;
 	
 	public List<ProdVO> pGetList(ProdCriteria cri) {
 		
 		List<ProdVO> list = mapper.getListWithPaging(cri);
-		for(ProdVO vo : list) {
-			String pno = vo.getProd_no();
-			//List<BoardAttachVO> alist = attatchMapper.findByBno(bno);
-			//vo.setAttachList(alist);
-		}
 		return list;
 		
 		
