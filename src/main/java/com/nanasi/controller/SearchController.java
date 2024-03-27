@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nanasi.common.ProdCriteria;
 import com.nanasi.common.ProdPageDTO;
@@ -37,7 +36,7 @@ public class SearchController {
 		int total = service.pGetTotalCount(cri);
 		model.addAttribute("list",list);
 		model.addAttribute("pageMaker", new ProdPageDTO(cri, total));
-		return "/prod/prod";
+		return "/search/search";
 	}
 	
 	

@@ -51,10 +51,10 @@ file="../main/header.jsp"%>
       <div class="col-md-9">
         <div class="condition float-end">
           <select class="w3-input-e3 box" id="domain-list">
-            <option value="allProduct">모든 상품</option>
-            <option value="review">리뷰 많은 순</option>
-            <option value="qrade">평점 높은 순</option>
-            <option value="newProduct">새상품순</option>
+            <option value="allProduct">모든 상품</option>	<!-- 상품이름 가나다순? -->
+            <option value="review">리뷰 많은 순</option>	<!-- 리뷰많은순 -->
+            <option value="qrade">평점 높은 순</option>		<!-- 평점높은순 -->
+            <option value="newProduct">새상품순</option>	<!-- 새상품순 adddate 이용? -->
           </select>
         </div>
 
@@ -62,6 +62,7 @@ file="../main/header.jsp"%>
 
         <div class="row">
           <!-- 상품 리스트 반복 요소 -->
+          <c:forEach var="list" items="${list}">
           <div class="col-md-4">
             <div class="product">
               <a class="productImg" href="../../detail/detail.html">
@@ -78,6 +79,7 @@ file="../main/header.jsp"%>
               <p>월 구독료</p>
             </div>
           </div>
+          </c:forEach>
           <!-- 상품 리스트 반복 요소 끝 -->
 
           <div class="paging">
