@@ -25,8 +25,9 @@ public class UserController {
 	private final MemberService memberService;
 	
 	String checkIncode = "";
-	
-	@GetMapping("/")
+
+	//메인 홈
+	@GetMapping({"", "/", "/main.do"})
 	public String main() {
 		return "/main/main";
 	}

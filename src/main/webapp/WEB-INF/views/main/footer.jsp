@@ -7,7 +7,11 @@
       <!-- 윗줄 -->
       <div class="footer-on">
         <a class="footerlogo" href="main.html">
+<<<<<<< HEAD
           <img src="../resources/images/footerlogo.png" />
+=======
+          <img src="/resources/images/footerlogo.png" />
+>>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
         </a>
         <p class="name">Kim JinKwon | Park BoYoung | I'm SongGun | Jeon JiHyeon | Hong HyeRim</p>
       </div>

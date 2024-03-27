@@ -17,6 +17,10 @@ import lombok.extern.log4j.Log4j2;
 public class MailSenderRunner {
 	
 	private final JavaMailSender mailSender;
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'feature' of https://github.com/zzinsonagi/project_nanasi.git
 	
 	@Value("${spring.mail.username}")
 	private String from;

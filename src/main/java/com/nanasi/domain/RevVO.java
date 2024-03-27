@@ -1,9 +1,11 @@
 package com.nanasi.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import lombok.Data;
+	
+import java.util.List;
+
 
 @Data
 public class RevVO {
@@ -25,7 +27,7 @@ public class RevVO {
 	private String user_id;	
 	private String prod_no; //혹시 모르니까
 	private String prod_name;
-	private String prod_add; //구독 시작일 
+	private Date prod_add; //구독 시작일 
 	private String sub_date; //구독 기간
 	private String prod_color;
 }

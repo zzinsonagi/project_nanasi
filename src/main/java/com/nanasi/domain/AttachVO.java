@@ -19,7 +19,7 @@ public class AttachVO {
 	private int att_num;
 	//문의 번호
 	private int qa_num;
-	//상품 번호 
+	//상품 번호
 	private String prod_no;
 	//리뷰에서 사용할 것
 	private String sub_num;
