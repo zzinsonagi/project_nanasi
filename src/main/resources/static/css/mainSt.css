@@ -122,7 +122,7 @@ header {
 .star-input>.input,
 .star-input>.input>label:hover,
 .star-input>.input>input:focus+label,
-.star-input>.input>input:checked+label{display: inline-block;vertical-align:middle;background:url('../../static/images/grade_img.png')no-repeat;}
+.star-input>.input>input:checked+label{display: inline-block;vertical-align:middle;background:url('/resources/images/grade_img.png')no-repeat;}
 .star-input{display:inline-block; white-space:nowrap;width:225px;height:40px;line-height:30px;}
 .star-input>.input{display:inline-block;width:150px;background-size:150px;height:28px;white-space:nowrap;overflow:hidden;position: relative;}
 .star-input>.input>input{position:absolute;width:1px;height:1px;opacity:0;}

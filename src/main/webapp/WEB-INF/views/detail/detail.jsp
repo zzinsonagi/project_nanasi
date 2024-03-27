@@ -3,6 +3,7 @@ file="../main/header.jsp"%>
 
 <!-- ----------------------------------- content ----------------------------------- -->
 
+   
 <div class="detail">
   <div class="container">
     <div class="row" style="padding: 0 20px">
@@ -10,22 +11,21 @@ file="../main/header.jsp"%>
 
       <div class="col-md-7">
         <div class="main-image">
-          <img src="../../static/images/michieda/michieda1.png" alt="Image 1" />
+          <img src="/resources/images/michieda/michieda1.png" alt="Image 1" id="big" />
         </div>
 
-        <!-- 스크립트 이미지 경로도 수정해야함 -->
         <ul class="thumbnails">
           <li class="thumbnail" data-index="0">
-            <img src="../../static/images/michieda/michieda1.png" alt="Thumbnail 1" />
+            <img src="/resources/images/michieda/michieda1.png" alt="Thumbnail 1" class="small"/>
           </li>
           <li class="thumbnail" data-index="1">
-            <img src="../../static/images/michieda/michieda2.png" alt="Thumbnail 2" />
+            <img src="/resources/images/michieda/michieda2.png" alt="Thumbnail 2" class="small"/>
           </li>
           <li class="thumbnail" data-index="2">
-            <img src="../../static/images/michieda/michieda3.png" alt="Thumbnail 3" />
+            <img src="/resources/images/michieda/michieda3.png" alt="Thumbnail 3" class="small"/>
           </li>
           <li class="thumbnail" data-index="3">
-            <img src="../../static/images/michieda/michieda4.png" alt="Thumbnail 4" />
+            <img src="/resources/images/michieda/michieda4.png" alt="Thumbnail 4" class="small"/>
           </li>
         </ul>
       </div>
@@ -35,17 +35,17 @@ file="../main/header.jsp"%>
       <div class="col-md-5">
         <div class="productNamePricePath">
           <div class="productPath float-end">
-            <a href="../category/allCate/all.html">Home > Home Appiances > Living</a>
+            <a href="../category/allCate/all.html">Home > Home Appliances > Living</a>
           </div>
           <div class="clearfix" style="margin-bottom: 28px"></div>
           <div class="productPath" style="margin-bottom: 16px">
-            <a href="../category/allCate/all.html">NANIWA DANSHI > </a>
+            <a href="../category/allCate/all.html">${prodVo.prod_cate} > </a>
           </div>
           <div class="productName">
-            <h2>나니와단시 미치에다 슌스케</h2>
+            <h2>${prodVo.prod_name}</h2>
           </div>
           <div class="productPrice">
-            <p class="float-end">728,725,000원</p>
+            <p class="float-end">${prodVo.prod_price}원</p>
             <div class="clearfix"></div>
             <h2 class="float-end">월 72,500원</h2>
             <div class="clearfix"></div>
@@ -167,30 +167,29 @@ file="../main/header.jsp"%>
     </div>
   </div>
 
-  <script>
-    const thumbnails = document.querySelectorAll(".thumbnail");
-    const mainImage = document.querySelector(".main-image img");
+<!-- 이미지 전환 -->
+<script>
+	var bigPic = document.querySelector("#big");
+	var smallPics = document.querySelectorAll(".small");
+	
+	smallPics.forEach((smallPics) => {
+	    smallPics.addEventListener("click", changepic);
+	});
 
-    thumbnails.forEach((thumbnail) => {
-      thumbnail.addEventListener("click", () => {
-        const index = thumbnail.getAttribute("data-index");
-        const imageUrl = `../../static/images/michieda/michieda${parseInt(index) + 1}.png`;
+	function changepic() {
+	    var smallPicAttribute = this.getAttribute("src");
+	    bigPic.setAttribute("src", smallPicAttribute);
 
-        mainImage.style.opacity = 0; // 이미지 투명도 조정
-        setTimeout(() => {
-          mainImage.src = imageUrl;
-          mainImage.style.opacity = 1; // 투명도를 1로 다시 설정하여 페이드 효과
-        }, 200); // 0.5초 뒤에 이미지 변경
+	    // 이미지 투명도를 조절하여 페이드 효과 적용
+        bigPic.style.transition = "opacity 0.5s";
+	    bigPic.style.opacity = 0;
+	    setTimeout(() => {
+	        bigPic.style.opacity = 1; // 투명도를 1로 다시 설정하여 페이드 효과
+	    }, 200); // 0.5초 뒤에 투명도를 다시 1로 변경
+	}
+</script>
 
-        thumbnails.forEach((thumbnail) => {
-          thumbnail.classList.remove("selected");
-        });
-        thumbnail.classList.add("selected");
-      });
-    });
-  </script>
-
-  <script>
+<script>
     const colorButtons = document.querySelectorAll(".color-choice button");
     const colorText = document.querySelector(".color span");
 
@@ -225,7 +224,7 @@ file="../main/header.jsp"%>
         event.preventDefault();
       });
     });
-  </script>
+</script>
 
   <!-- 상품정보, 리뷰, qna  -->
 
@@ -244,18 +243,23 @@ file="../main/header.jsp"%>
       <!-- 상품정보 content -->
       <div class="content detailInfo">
         <div class="contentBox1">
-          <img src="../../static/images/detailInfo.png" alt="상품정보 이미지" />
+          <img src="/resources/images/detailInfo.png" alt="상품정보 이미지" />
         </div>
       </div>
-
+    
       <!-- 리뷰 content -->
       <div class="content detailReview">
         <div class="contentBox2">
-          <h4>상품리뷰 3건</h4>
+          <h4>상품리뷰 ${revTot}건</h4>
+                <p>사라질 p태그 혜림아 맞다 사진도 연결해!!!!!!!!!</p>
+                <p>사라질 p태그 혜림아 이거 별점 불러오는 거 만들어놓은 거 연결해!!!!!!!!!</p>
+                <p>사라질 p태그 혜림아 별점 밑에랑 연동되는 것도 진권이한테 얘기해!!!!!!!!!</p>
+                <p>사라질 p태그 왐마 상위 카테고리 value 생각 안 하고 넣었다!!!!!!!!!</p>
+                <p>사라질 p태그 혜림아 신고랑 삭제랑 수정 src로 하는지 따로 function빼는지 물어봐!!!!!!!!!</p>
 
           <!-- 리뷰 반복 -->
-
           <form name="review" method="get">
+          <c:forEach var="revList" items="${revList}">
             <div class="review">
               <div class="reviewWrite">
                 <!-- 별점 -->
@@ -280,7 +284,7 @@ file="../main/header.jsp"%>
                 <div class="clear-class"></div>
 
                 <div class="writerInfo">
-                  <p>도준우 | 2024-03-17 |</p>
+                  <p>${revList.user_id} | <fmt:formatDate pattern="yyyy-MM-dd" value="${revList.prod_add}"/> |</p>
                   <button type="button"><p>신고</p></button>
                   <p>|</p>
                   <button type="button"><p>수정</p></button>
@@ -288,26 +292,21 @@ file="../main/header.jsp"%>
                   <button type="button"><p>삭제</p></button>
                 </div>
                 <div class="writerInfo">
-                  <p>컬러 : 스타라이트 / 구독기간 : 3개월</p>
+                  <p>컬러 : ${revList.prod_color} / 구독기간 : ${revList.sub_date}개월</p>
                 </div>
 
                 <div class="clear-class"></div>
 
                 <div class="reviewContent">
                   <p>
-                    만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰
-                    만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰
-                    만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰 만족스러운 리뷰
-                    만족스러운 리뷰 만족스러운 리뷰
+                    ${revList.rev_content}
                   </p>
                 </div>
               </div>
-              <!--<div class="thumbnailImg">
-							<img src="../../static/images/michieda/michieda1.png" alt="썸네일 이미지">
-						</div>-->
             </div>
           </form>
           <div class="line"></div>
+          </c:forEach>
           <!-- 리뷰 반복 끝 -->
 
           <div class="paging2">
@@ -322,17 +321,19 @@ file="../main/header.jsp"%>
         </div>
       </div>
 
-      <!-- 별점 스크립트 -->
-      <script src="js/jquery-1.11.3.min.js"></script>
-      <script src="js/star.js"></script>
+    <!-- 별점 스크립트 -->
+    <script src="/resources/js/jquery-3.3.1.min.js"></script>
+    <script src="/resources/js/star.js"></script>
 
       <!-- Q&A content, adminst-->
       <div class="content detailQna">
         <div class="contentBox3">
           <div class="qna">
             <div class="qnaTitle">
-              <h4>Q&A 3건</h4>
-              <button onclick="window.location.href='../detail/detailQna.html'">Q&A 작성하기</button>
+              <h4>Q&A ${qaTot}건</h4>
+              <p>혜림아 밑에 제목 클릭하면 나올 jsp 없는거 아직 만들고 있는지 확인하자!!!!!!!!!!!!!</p>
+              <p>혜림아 qa mybatis에 resultType도 얘기하자!!!!!!!!!!!!!</p>
+              <button onclick="window.location.href='/qna/befRegisterEnter?prod_no=${prodVo.prod_no}'">Q&A 작성하기</button>
             </div>
             <div class="qnaWrite">
               <div class="line"></div>
@@ -346,52 +347,38 @@ file="../main/header.jsp"%>
 
               <form name="qnaList" method="get">
                 <!-- Q&A list 반복되는 부분 -->
+                <c:forEach var="qaList" items="${qaList}">
                 <div class="qnaList">
                   <div class="qnaState">
                     <!-- 답변상태 -->
-                    <span class="qnaListWait">미답변</span>
+                    <c:choose>
+                    	<c:when test="${qaList.qa_state == 0}">
+		                    <span class="qnaListWait">미답변</span>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<span class="qnaListCom">답변완료</span>
+                    	</c:otherwise>
+                    </c:choose>
                   </div>
                   <div class="qnaListTitle">
                     <!-- 제목 -->
-                    <a href="../detail/detailQnaView.html">배송일부터 구독 시작인가요?</a>
+                    <a href="/qna/befQuestionDetail?qa_num=${qaList.qa_num}">${qaList.qa_title}</a>
                   </div>
                   <div class="qnaListWriter">
                     <!-- 작성자 -->
-                    <p>도준우</p>
+                    <p>${qaList.user_id}</p>
                   </div>
                   <div class="qnaListDate">
                     <!-- 등록일 -->
-                    <p>2024.03.18</p>
+                    <p><fmt:formatDate pattern="yyyy-MM-dd" value="${qaList.qa_add}"/></p>
                   </div>
                 </div>
                 <div class="line"></div>
+                </c:forEach>
                 <!-- Q&A list 반복되는 부분 끝 -->
-
-                <!-- 답변완료 버튼만 뽑고 삭제할 부분 -->
-                <div class="qnaList">
-                  <div class="qnaState">
-                    <!-- 답변상태 -->
-                    <span class="qnaListCom">답변완료</span>
-                  </div>
-                  <div class="qnaListTitle">
-                    <!-- 제목 -->
-                    <a href="../detail/detailQnaView.html"
-                      >주문하면 보통 언제부터 배송되나요? 구독 한달은 30일 기준인가요?</a
-                    >
-                  </div>
-                  <div class="qnaListWriter">
-                    <!-- 작성자 -->
-                    <p>도준우</p>
-                  </div>
-                  <div class="qnaListDate">
-                    <!-- 등록일 -->
-                    <p>2024.03.18</p>
-                  </div>
-                </div>
-                <div class="line"></div>
-                <!-- 답변완료 버튼만 뽑고 삭제할 부분 끝 -->
               </form>
 
+				<!-- 진권 페이징 시작 -->
               <div class="paging2">
                 <a href=""><i class="bi bi-chevron-double-left"></i></a>
                 <a href="" class="active">1</a>
@@ -401,6 +388,8 @@ file="../main/header.jsp"%>
                 <a href="">5</a>
                 <a href=""><i class="bi bi-chevron-double-right"></i></a>
               </div>
+				<!-- 진권 페이징 끝 -->
+              
             </div>
           </div>
         </div>
@@ -417,14 +406,14 @@ file="../main/header.jsp"%>
       $(".content").hide();
       $(".detailInfo").show();
 
-      $(".topBtn").click(function () {
-        $(".topBtn").removeClass("active");
-        $(this).addClass("active");
+       $(".topBtn").click(function () {
+       $(".topBtn").removeClass("active");
+       $(this).addClass("active");
 
         prvTopInx = topInx;
         topInx = parseInt($(this).attr("data-n"));
         contentChange();
-      });
+      }); 
 
       function contentChange() {
         $(".content").hide();

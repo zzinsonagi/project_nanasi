@@ -30,5 +30,13 @@ public interface ReviewMapper {
 	//리뷰 출력
 	public List<RevVO> reviewAll(String prod_no);
 
+	//리뷰 갯수
+	public int reviewCount(String prod_no);
+	
+	//신고된 리뷰 출력
+	public List<RevVO> badReview(int rev_report);
+	
+	//신고된 리뷰 갯수
+	public int badReviewCount(int rev_report);
 	
 }

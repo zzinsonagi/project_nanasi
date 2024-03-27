@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ include
-file="../main/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ include file="../main/header_BY.jsp"%>
 <!-- ----------------------------------- content ----------------------------------- -->
 
 <div class="title-container">
@@ -127,4 +127,4 @@ file="../main/header.jsp"%>
 </script>
 
 <!-- ----------------------------------- content 끝 ----------------------------------- -->
-<% include file="../main/footer.jsp"%>
+<%@ include file="../main/footer.jsp"%>

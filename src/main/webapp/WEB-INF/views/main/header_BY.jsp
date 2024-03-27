@@ -27,10 +27,10 @@
 
     <!-- css -->
     <link rel="stylesheet" href="/resources/css/mainSt.css" />
-    <link rel="stylesheet" href="/resources/css/searchCateSt.css" />
-    <link rel="stylesheet" href="/resources/css/orderSt.css" />
-    <!-- <link rel="stylesheet" href="/resources/css/memSt.css" /> -->
-    <!-- <link rel="stylesheet" href="/resources/css/adminSt.css" /> -->
+    <!-- <link rel="stylesheet" href="/resources/css/searchCateSt.css" /> -->
+    <!-- <link rel="stylesheet" href="/resources/css/orderSt.css" /> -->
+    <link rel="stylesheet" href="/resources/css/memSt.css" />
+    <link rel="stylesheet" href="/resources/css/adminSt.css" />
 
     <title>WhatSub</title>
   </head>

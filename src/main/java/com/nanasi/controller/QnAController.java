@@ -46,13 +46,13 @@ public class QnAController {
 		model.addAttribute("list", list);
 		return "/qna/List_Sample";
 	}
-
 	
-	//답변 등록
-	@GetMapping("/befAnswerRegister")
-	public String befAnswerRegister(String qa_num) {
-		
-		return "";//질문 페이지? 아님 관리자에서 한 번에 답변하는 곳
+	//질문 개별 디테일
+	@GetMapping("/befQuestionDetail")
+	public String befQuestionDetail(int qa_num, Model model) {
+		QaVO vo = qnasv.befQuestionDetail(qa_num);
+		model.addAttribute("vo", vo);
+		return "/qna/befQnAList_Sample";
 	}
 
 	
@@ -74,8 +74,5 @@ public class QnAController {
 		return "redirect:/qna/aftQnAList";//가 아니라 마이 페이지로 수정해야 함
 										//관리자는 고장 질문 목록들로 리다이렉트
 	}
-	
-	//관리자가 볼 질문 모음
-	//commit용
 	
 }
