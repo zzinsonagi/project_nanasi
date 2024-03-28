@@ -52,7 +52,9 @@ public class DetailController {
 	//상품 QnA
 	@GetMapping("/qna")
 	public String qna() {
-		return "/detail/detailQna";
+		return "/main/main";
 	}
+	
+
 
 }

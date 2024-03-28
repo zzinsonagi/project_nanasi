@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ include
-file="../main/header.jsp"%>
+file="../main/header_JH.jsp"%>
 
 <!-- ----------------------------------- content ----------------------------------- -->
 <div class="title-container">

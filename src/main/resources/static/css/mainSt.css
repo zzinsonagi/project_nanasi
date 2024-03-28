@@ -23,15 +23,15 @@ header {
 	transform: translateX(-50%);
 	z-index: 1000;
 	
-	width: 1280px;
-	height: 120px;
-	padding: 20px 0 32px 0;
+	width: 100%;
+	padding: 12px 0;
 	background:#fff;
 }
 
 .header {
   display:flex;
-  width:100%;
+  width: 1280px;
+  margin:0 auto;
 }
 
 .header a{
@@ -47,7 +47,7 @@ header {
 
 /*헤더에 컨텐츠가 가려지지 않도록 하는 여백*/
 .kara {
-  margin-top: 168px; 
+  margin-top: 112px; 
 }
 
 /* nav 영역 */
@@ -144,69 +144,270 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 
 /* ------------------------------------ #main visual# ----------------------------------------- */
 
-
-
-.main-wrap {
-  width: 1280px;
-  margin: 0 auto;
-  display: flex;
+/*가운데정렬할 클래스*/
+.mainVisual,
+.mainLogo, .mainText, .mainImg, .mainButton,
+.storyTitle, .storyContent, .storyCard{
+  width:1280px;
+  margin:0 auto;
 }
 
-.brand-img {
-  border: 1px solid purple;
-  width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 50px 0;
-}
 
-.story {
-  width: 1280px;
-  margin: 0 auto;
-  padding: 50px 0;
-  background-color: rgba(200, 202, 203, 0.3);
-}
 
-.story .story-wrap {
-  width: 1280px;
-  text-align: center;
-  margin: 0 auto;
+/*mainVisual*/
+
+.mainVisual {
   position: relative;
 }
 
-.story .story-wrap p {
-  margin: auto;
+.mainImg {
+  position: relative;
+  z-index: 0;
 }
 
-.story .story-wrap .article-wrap {
-  width: 1280px;
-  display: flex;
-  justify-content: space-between;
-}
-.story .story-wrap .article-wrap .article-box {
-  padding: 20px 15px;
-  border: 1px solid black;
-  background-color: white;
+.mainImg img{
+  width:auto;
+  height:600px;
+  object-fit: cover;
+  float: right;
 }
 
-.story .story-wrap .article-wrap .article-box span,
-.story .story-wrap .article-wrap .article-box > i,
-.story .story-wrap .article-wrap .article-box p {
-  display: block;
+.mainText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure text is above the image */
+
+  margin-top: 300px;
+  padding:60px;
 }
 
-.story .story-wrap .article-wrap .article-box span {
-  margin-top: 20px;
+.mainText strong{
+  font-size: 80px;
+  font-weight: bolder;
+  line-height: 90px;
+  margin-bottom: 40px;
+ 
+  width: 100%;
+}
+
+.prodThin {
+  font-size: 40px;
+  font-weight: lighter;
+  width: 100%;
+  padding-left: 4px;
+
+  letter-spacing:-4px;
+}
+
+.prodBold {
+  font-size: 40px;
+  font-weight: bolder;
+  width: 100%;
+  padding-left: 4px;
+  margin-bottom: 60px;
+
+  letter-spacing:-4px;
+}
+
+.mainText p {
+  font-size: 20px;
+  font-weight: lighter;
+  padding:20px 0;
+  padding-left: 8px;
+  padding-top:44px;
+
+  letter-spacing:-2px;
+}
+
+.mainButton {
+  margin-left:4px;
+  margin-top:60px;
+}
+
+.mainButton button {
+  padding:20px 40px;
+  border-radius: 40px;
+
   font-size: 20px;
   font-weight: bold;
+
+  background: transparent;
+  border: 1px solid #000;
 }
 
-.story .story-wrap .article-wrap .article-box > i {
-  margin-top: 20px;
-  font-size: 45px;
-  position: relative;
+.mainButton button:hover {
+  padding:20px 40px;
+  border-radius: 40px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  background: #185FFF;
+  color:#fff;
+  border: 1px solid #185FFF;
 }
+
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation .5s ease forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOutAnimation .5s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/*mainLogo*/
+
+.mainLogo{
+  padding:100px 0;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap:112px;
+}
+
+
+/*mainStory*/
+
+.mainStory {
+  width:100%;
+  padding: 86px 0;
+  padding-top:60px;
+
+  background: #F2F4F8;
+}
+
+.storyTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.storyTitle h1{
+  margin-right: 20px;
+  font-weight: bolder;
+}
+
+.storyTitle img {
+  object-fit: none;
+}
+
+
+/*브랜드스토리 카드 뒤집기*/
+
+.storyCard {
+  display: flex;
+  padding: 0 16px;
+  margin-top:40px;
+}
+
+.flip { 
+  width:100%;
+  height:200px;
+  margin:0 8px;
+  perspective: 1100px;
+}
+
+.card {
+  width: 100%; 
+  height: 100%; 
+  position: relative;
+  transition: .8s;
+  transform-style: preserve-3d;
+
+  border:0;
+}	
+
+.front, .back {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+/*뒷면은 사전에 미리 뒤집기*/
+.back { 
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+  transform: rotateY(180deg);
+  border-radius: 12px;
+
+  padding:24px;
+  padding-top:40px;
+  align-items: center;
+}
+
+.back p{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #185FFF;
+}
+
+.backContent {
+  text-align: center;
+  font-size:14px;
+  color:#21272A;
+}
+
+/*호버 시 뒤집기*/ 
+.flip:hover .card {
+  transform: rotateY(180deg);
+}
+
+
+.front h1{
+  color:#C1C7CD;
+  font-size: 40px;
+
+  text-align: center;
+  margin-top:36px;
+}
+
+.front h2{
+  color:#21272A;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.front p {
+  color:#697077;
+  font-size: 12px;
+  text-align: center;
+}
+
+
 
 
 /* ------------------------------------ #공통 스타일# ----------------------------------------- */

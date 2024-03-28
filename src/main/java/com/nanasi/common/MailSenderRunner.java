@@ -1,5 +1,7 @@
 package com.nanasi.common;
 
+//import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 import java.util.Date;
 import java.util.Random;
 
